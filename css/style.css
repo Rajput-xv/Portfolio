@@ -50,8 +50,9 @@ article, aside, figcaption, figure, footer, header, hgroup, main, nav, section {
   display: block; }
 
 body {
-  margin: 0;
-  padding: 0;
+  margin: 0 auto;
+  max-width: 1110px;
+  padding: 0 15px;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   font-size: 1rem;
   font-weight: 400;
@@ -449,6 +450,7 @@ pre {
 
 .container {
   width: 100%;
+  max-width: 1110px;
   padding-right: 15px;
   padding-left: 15px;
   margin-right: auto;

@@ -6,8 +6,21 @@
     <title>Yash Verma Portfolio</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Portfolio of Yash Verma - Full Stack Developer & Software Developer with expertise in React, Node.js, and various web technologies">
+    <meta name="keywords" content="Yash Verma, Full Stack Developer, Software Developer, Web Development, Portfolio, React, Node.js, JavaScript">
+    <meta name="author" content="Yash Verma">
+    <meta name="theme-color" content="#000000">
+    <!-- Open Graph / Social Media Meta Tags -->
+    <meta property="og:title" content="Yash Verma Portfolio">
+    <meta property="og:description" content="Full Stack Developer & Software Developer Portfolio">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="images/about-me.jpg">
+    
+    <!-- Apple Touch Icon -->
+    <link rel="apple-touch-icon" href="images/favicon.svg">
 
     <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
     <link rel="stylesheet" href="css/open-iconic-bootstrap.min.css">
     <link rel="stylesheet" href="css/animate.css">
@@ -23,6 +36,7 @@
     <link rel="stylesheet" href="css/flaticon.css">
     <link rel="stylesheet" href="css/icomoon.css">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/contact-form.css">
 
     <style>
       /*======================================
@@ -40,6 +54,55 @@
 
       .about-mf .about-img img {
         margin-left: 10px;
+      }
+      
+      /* Project cards equal height */
+      .project-card {
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+      }
+      
+      .project-card .resume-wrap {
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        padding: 20px;
+        border-radius: 5px;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        transition: all 0.3s ease;
+      }
+      
+      .project-card .resume-wrap:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+      }
+      
+      .project-card .project-description {
+        flex-grow: 1;
+        margin-bottom: 15px;
+      }
+      
+      /* Mobile project card improvements */
+      @media (max-width: 768px) {
+        .project-card {
+          margin-bottom: 15px;
+        }
+        
+        .project-card .resume-wrap {
+          padding: 15px;
+        }
+        
+        .project-card h3 {
+          font-size: 18px;
+        }
+        
+        .project-links a {
+          margin-bottom: 5px;
+          display: block;
+          width: 100%;
+          text-align: center;
+        }
       }
 
       .skill-mf .progress {
@@ -95,6 +158,67 @@
           width: 0;
         }
       }
+      
+      /* Skills section styling with icons */
+      .skills-container {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 15px;
+        margin-top: 15px;
+      }
+      
+      .skill-category {
+        margin-bottom: 20px;
+        width: 100%;
+      }
+      
+      .skill-category h4 {
+        font-size: 1.1rem;
+        margin-bottom: 15px;
+        color: #ffbd39;
+        font-weight: 600;
+        position: relative;
+        padding-bottom: 8px;
+      }
+      
+      .skill-category h4:after {
+        content: '';
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 50px;
+        height: 2px;
+        background-color: #ffbd39;
+      }
+      
+      .skill-item {
+        display: inline-flex;
+        align-items: center;
+        background-color: rgba(255, 255, 255, 0.1);
+        border-radius: 30px;
+        padding: 8px 15px;
+        margin-right: 10px;
+        margin-bottom: 10px;
+        transition: all 0.3s ease;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+      }
+      
+      .skill-item:hover {
+        transform: translateY(-3px);
+        background-color: rgba(255, 189, 57, 0.1);
+        border-color: #ffbd39;
+      }
+      
+      .skill-item i {
+        margin-right: 8px;
+        font-size: 16px;
+        color: #ffbd39;
+      }
+      
+      .skill-item span {
+        font-size: 14px;
+        font-weight: 500;
+      }
 
       /* project image zoom effect */
 
@@ -113,19 +237,93 @@
           margin-right: 5%;
         }
 
+        /* Instead of hiding profile image, make it appear above text on mobile */
         .order-md-last {
-          visibility: hidden;
+          visibility: visible;
+          opacity: 0.6;
+          height: 300px !important;
+          position: absolute;
+          width: 100%;
+          top: 0;
+          left: 0;
+          z-index: 1;
+        }
+        
+        /* Move text content below the image */
+        .one-forth {
+          padding-top: 300px !important;
+          z-index: 2 !important;
+          position: relative !important;
+        }
+        
+        /* Make sure text is readable on mobile */
+        #typing-animation {
+          font-size: 24px;
         }
 
         .about-img img {
-          content: url("images/me.png");
+          content: url("images/about-me.jpg");
+        }
+      }
+      
+      /* Additional mobile improvements */
+      @media (max-width: 768px) {
+        .skill-item {
+          padding: 5px 10px;
+          margin-right: 5px;
+          margin-bottom: 5px;
+        }
+        
+        .skill-item i {
+          margin-right: 5px;
+          font-size: 14px;
+        }
+        
+        .skill-item span {
+          font-size: 12px;
+        }
+        
+        /* Improve buttons on mobile */
+        .btn {
+          padding: 8px 15px !important;
+          font-size: 14px !important;
+        }
+        
+        /* Improve contact section on mobile */
+        .contact-section .box {
+          padding: 15px !important;
+          margin-bottom: 15px !important;
+        }
+        
+        .contact-section .box .icon {
+          width: 70px !important;
+          height: 70px !important;
+          margin-bottom: 15px !important;
+        }
+        
+        .contact-section .box .icon span {
+          font-size: 24px !important;
+        }
+        
+        .contact-section .box h3 {
+          font-size: 16px !important;
+        }
+        
+        /* Fix form on mobile */
+        .contact-section form .btn {
+          width: 100% !important;
+        }
+        
+        /* Fix social icons spacing */
+        .ftco-footer-social li {
+          margin-right: 10px !important;
         }
       }
     </style>
 
   </head>
 
-  <body data-spy="scroll" data-target=".site-navbar-target" data-offset="300" style="max-width: 1437px;">
+  <body data-spy="scroll" data-target=".site-navbar-target" data-offset="300" style="max-width: 100%; overflow-x: hidden;">
 
     <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar ftco-navbar-light site-navbar-target" id="ftco-navbar">
       <div class="container">
@@ -147,16 +345,20 @@
             </li>
             <li class="nav-item">
               <a href="#resume-section" class="nav-link">
-                <span>Resume</span></a>
+                <span>Experience</span></a>
+            </li>
+            <li class="nav-item">
+              <a href="#projects-section" class="nav-link">
+                <span>Projects</span></a>
             </li>
             <li class="nav-item">
               <a href="#contact-section" class="nav-link">
                 <span>Contact</span></a>
             </li>
-            <li class="nav-item">
+            <!-- <li class="nav-item">
               <a href="#send-message" class="nav-link">
                 <span>Message me</span></a>
-            </li>
+            </li> -->
           </ul>
         </div>
       </div>
@@ -167,7 +369,7 @@
           <div class="overlay"></div>
           <div class="container">
             <div class="row d-md-flex no-gutters slider-text align-items-end justify-content-end" data-scrollax-parent="true">
-              <div class="one-third js-fullheight order-md-last img" style="background-image:url(images/pfp.png);">
+              <div class="one-third js-fullheight order-md-last img" style="background-image:url(images/pfp.png); background-size: 90%; background-position: center center;">
                 <div class="overlay"></div>
               </div>
               <div class="one-forth d-flex  align-items-center ftco-animate" data-scrollax=" properties: { translateY: '70%' }">
@@ -216,7 +418,7 @@
                   </div> -->
                   <p>
                     <!-- <a href="https://www.instagram.com/rajput_xv" class="btn btn-primary py-3 px-4">My Instagram</a> -->
-                    <a href="https://drive.google.com/file/d/1dpB5CFVpJTXLowalixtHtlRCpXf4139S/view?usp=drive_link" class="btn btn-primary py-3 px-4">Download CV</a>
+                    <a href="https://drive.google.com/file/d/1pkz0Tvgmy7sof--dPhvirjkyzXATTSga/view?usp=sharing" class="btn btn-primary py-3 px-4">Download CV</a>
                     <a href="https://www.linkedin.com/in/yash-rajput-xv" class="btn btn-white btn-outline-white py-3 px-4">My Linkedin</a>
                   </p>
                 </div>
@@ -229,139 +431,245 @@
 
     <section class="ftco-about img ftco-section ftco-no-pb" id="about-section">
       <div class="container">
+        <div class="row justify-content-center mb-5 pb-3">
+          <div class="col-md-7 heading-section text-center ftco-animate">
+            <h1 class="big big-2">About Me</h1>
+            <h2 class="mb-4">About Me</h2>
+          </div>
+        </div>
+        
         <div class="row">
-          <div class="row d-flex align-items-stretch">
-            <!-- <div class="row d-flex"> -->
-            <div class="col-md-6 col-lg-5 d-flex">
-              <div class="img-about img d-flex align-items-stretch">
-                <div class="overlay">
-                  <div class="row">
-                    <div class="col-sm-6 col-md-5">
-                      <div class="about-img">
-                        <img src="images/about-me.jpg" class="img-fluid rounded b-shadow-a" alt="image_aboutme">
-                      </div>
-                    </div>
-                    <!-- Details next to profile image -->
-                    <div class="col-sm-6 col-md-7">
-                      <div class="about-info">
-                        <p>
-                          <span class="title-s">Name:
-                          </span>
-                          <span>Yash Verma</span></p>
-                        <p>
-                          <span class="title-s">Job Role:
-                          </span>
-                          <span>Full Stack Developer & Software Developer</span></p>
-                        <p>
-                          <!-- <span class="title-s">Experience: </span> <span>5 Years 3 Months</span></p> <p> -->
-                          <span class="title-s">Address:
-                          </span>
-                          <span>Meerut, Uttar Pradesh</span></p>
-                      </div>
-                    </div>
+          <!-- Left Column - About Me Content -->
+          <div class="col-lg-6 col-md-12">
+            <div class="about-content pr-lg-4">
+              <div class="row mb-4">
+                <div class="col-sm-4 col-md-4">
+                  <div class="about-img">
+                    <img src="images/about-me.jpg" class="img-fluid rounded b-shadow-a" alt="image_aboutme">
                   </div>
+                </div>
+                <div class="col-sm-8 col-md-8">
+                  <div class="about-info">
+                    <p>
+                      <span class="title-s">Name:</span>
+                      <span>Yash Verma</span>
+                    </p>
+                    <p>
+                      <span class="title-s">Job Role:</span>
+                      <span>Full Stack Developer & Software Developer</span>
+                    </p>
+                    <p>
+                      <span class="title-s">Address:</span>
+                      <span>Meerut, Uttar Pradesh</span>
+                    </p>
+                  </div>
+                </div>
+              </div>
 
-                  <div class="skill-mf">
-                    <p class="title-s">Skills</p>
-                    <span>Node JS</span>
-                    <!-- <span class="pull-right">85%</span> -->
-                    <div class="progress">
-                      <div class="progress-bar" role="progressbar" style="width: 70%" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div>
-                    </div>
-
-                    <span>React JS</span>
-                    <!-- <span class="pull-right">95%</span> -->
-                    <div class="progress">
-                      <div class="progress-bar" role="progressbar" style="width: 85%;" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100"></div>
-                    </div>
-
-                    <span>PYTHON</span>
-                    <!-- <span class="pull-right">85%</span> -->
-                    <div class="progress">
-                      <div class="progress-bar" role="progressbar" style="width: 95%" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div>
-                    </div>
-
-                    <span>Express JS</span>
-                    <!-- <span class="pull-right">99%</span> -->
-                    <div class="progress">
-                      <div class="progress-bar" role="progressbar" style="width: 70%" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
-                    </div>
-
-                    <span>Javascript</span>
-                    <!-- <span class="pull-right">99%</span> -->
-                    <div class="progress">
-                      <div class="progress-bar" role="progressbar" style="width: 85%" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div>
-                    </div>
-
-                    <span>C++</span>
-                    <!-- <span class="pull-right">99%</span> -->
-                    <div class="progress">
-                      <div class="progress-bar" role="progressbar" style="width: 99%" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
-                    </div>
-
+              <div class="skills-wrapper">
+              <div class="skills-container">
+                <p class="title-s">Skills</p>
+                
+                <div class="skill-category">
+                  <h4>Languages</h4>
+                  <div class="skill-item">
+                    <i class="fab fa-python"></i>
+                    <span>Python</span>
+                  </div>
+                  <div class="skill-item">
+                    <i class="fab fa-js"></i>
+                    <span>JavaScript</span>
+                  </div>
+                  <div class="skill-item">
+                    <i class="fab fa-java"></i>
                     <span>Java</span>
-                    <!-- <span class="pull-right">99%</span> -->
-                    <div class="progress">
-                      <div class="progress-bar" role="progressbar" style="width: 85%" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div>
-                    </div>
-
+                  </div>
+                  <div class="skill-item">
+                    <i class="fas fa-code"></i>
+                    <span>C++</span>
+                  </div>
+                  <div class="skill-item">
+                    <i class="fab fa-js"></i>
+                    <span>TypeScript</span>
+                  </div>
+                </div>
+                
+                <div class="skill-category">
+                  <h4>Frontend</h4>
+                  <div class="skill-item">
+                    <i class="fab fa-react"></i>
+                    <span>React</span>
+                  </div>
+                  <div class="skill-item">
+                    <i class="fab fa-vuejs"></i>
+                    <span>Vue.js</span>
+                  </div>
+                  <div class="skill-item">
+                    <i class="fab fa-html5"></i>
+                    <span>HTML5</span>
+                  </div>
+                  <div class="skill-item">
+                    <i class="fab fa-css3-alt"></i>
+                    <span>CSS3</span>
+                  </div>
+                  <div class="skill-item">
+                    <i class="fab fa-sass"></i>
+                    <span>SCSS</span>
+                  </div>
+                  <div class="skill-item">
+                    <i class="fab fa-bootstrap"></i>
+                    <span>Bootstrap</span>
+                  </div>
+                  <div class="skill-item">
+                    <i class="fab fa-css3"></i>
+                    <span>TailwindCSS</span>
+                  </div>
+                  <div class="skill-item">
+                    <i class="fab fa-js"></i>
+                    <span>jQuery</span>
+                  </div>
+                </div>
+                
+                <div class="skill-category">
+                  <h4>Backend</h4>
+                  <div class="skill-item">
+                    <i class="fab fa-node-js"></i>
+                    <span>Node.js</span>
+                  </div>
+                  <div class="skill-item">
+                    <i class="fab fa-node-js"></i>
+                    <span>Express.js</span>
+                  </div>
+                  <div class="skill-item">
+                    <i class="fas fa-database"></i>
                     <span>MongoDB</span>
-                    <!-- <span class="pull-right">99%</span> -->
-                    <div class="progress">
-                      <div class="progress-bar" role="progressbar" style="width: 60%" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
-                    </div>
+                  </div>
+                  <div class="skill-item">
+                    <i class="fas fa-database"></i>
+                    <span>MySQL</span>
+                  </div>
+                  <div class="skill-item">
+                    <i class="fas fa-database"></i>
+                    <span>PostgreSQL</span>
+                  </div>
+                  <div class="skill-item">
+                    <i class="fas fa-key"></i>
+                    <span>JWT</span>
+                  </div>
+                  <div class="skill-item">
+                    <i class="fas fa-file-upload"></i>
+                    <span>Multer</span>
+                  </div>
+                </div>
+                
+                <div class="skill-category">
+                  <h4>Tools & Platforms</h4>
+                  <div class="skill-item">
+                    <i class="fab fa-git-alt"></i>
+                    <span>Git</span>
+                  </div>
+                  <div class="skill-item">
+                    <i class="fab fa-github"></i>
+                    <span>GitHub</span>
+                  </div>
+                  <div class="skill-item">
+                    <i class="fab fa-aws"></i>
+                    <span>AWS</span>
+                  </div>
+                  <div class="skill-item">
+                    <i class="fas fa-server"></i>
+                    <span>Vercel</span>
+                  </div>
+                  <div class="skill-item">
+                    <i class="fas fa-server"></i>
+                    <span>Render</span>
+                  </div>
+                  <div class="skill-item">
+                    <i class="fab fa-docker"></i>
+                    <span>Docker</span>
+                  </div>
+                  <div class="skill-item">
+                    <i class="fas fa-vial"></i>
+                    <span>Vite</span>
+                  </div>
+                  <div class="skill-item">
+                    <i class="fas fa-cloud"></i>
+                    <span>Cloudinary</span>
+                  </div>
+                  <div class="skill-item">
+                    <i class="fas fa-check-circle"></i>
+                    <span>Postman</span>
+                  </div>
+                  <div class="skill-item">
+                    <i class="fas fa-file-alt"></i>
+                    <span>OCR</span>
+                  </div>
+                  <div class="skill-item">
+                    <i class="fas fa-code"></i>
+                    <span>VS Code</span>
                   </div>
                 </div>
               </div>
             </div>
-
-            <div class="col-md-6 col-lg-7 pl-lg-5 pb-5">
-              <div class="row justify-content-start pb-3">
-                <div class="col-md-12 heading-section ftco-animate">
-
-                  <h1 class="big">About</h1>
-                  <h2 class="mb-4">About Me</h2>
-
-                  <p> I am a skilled Full Stack developer with a strong foundation in programming languages, including C++, Python, Java, and JavaScript. I have experience in collaborative open-source environments, which has enhanced my teamwork and technical abilities. My goal is to develop high-quality, scalable software applications that improve user satisfaction and drive business outcomes. Currently, I am expanding my expertise in DevOps practices for efficient software delivery. I am eager to contribute to an innovative organization that values collaboration and continuous growth. Outside of my technical interests, I enjoy traveling and photography, which inspire my creativity.</p>
-                  <ul class="about-info mt-4 px-md-0 px-2">
-                    <li class="d-flex">
-                      <span>Profile:</span>
-                      <span>Full Stack Developer &amp; Photographer</span></li>
-                    <li class="d-flex">
-                      <span>Domain:</span>
-                      <span>Software Developement</span></li>
-                    <li class="d-flex">
-                      <span>Education:</span>
-                      <span>Bachelor of Technology - Computer Science and Engineering</span></li>
-                    <li class="d-flex">
-                      <span>Language:</span>
-                      <span>English, Hindi</span></li>
-                    <!-- <li class="d-flex"> <span>BI Tools:</span> <span>Microsoft Power BI, Looker &amp; Tableau</span></li> -->
-                    <li class="d-flex">
-                      <span>Other Skills:</span>
-                      <span>
-                        Observational skills, Creativity, Knowledge of Networking fundamentals, Technical proficiency, Communication skills, Time management, Adaptability &amp; Attention to detail</span></li>
-                    <li class="d-flex">
-                      <span>Interest:</span>
-                      <span>Traveling, Travel Photography, Teaching, Editing</span></li>
-
-                  </ul>
-                </div>
+              
+            </div>
+          </div>
+          
+          <!-- Right Column - Skills -->
+          <div class="col-lg-6 col-md-12">
+            <div class="about-text">
+                <p>I am a skilled Full Stack developer with a strong foundation in programming languages, including C++, Python, Java, and JavaScript. I have experience in collaborative open-source environments, which has enhanced my teamwork and technical abilities.</p>
+                
+                <p>My goal is to develop high-quality, scalable software applications that improve user satisfaction and drive business outcomes. Currently, I am expanding my expertise in DevOps practices for efficient software delivery. I am eager to contribute to an innovative organization that values collaboration and continuous growth.</p>
+                
+                <p>Outside of my technical interests, I enjoy traveling and photography, which inspire my creativity.</p>
               </div>
+              
+              <ul class="about-info mt-4 px-md-0 px-2">
+                <li class="d-flex">
+                  <span>Profile:</span>
+                  <span>Full Stack Developer &amp; Photographer</span>
+                </li>
+                <li class="d-flex">
+                  <span>Domain:</span>
+                  <span>Software Developement</span>
+                </li>
+                <li class="d-flex">
+                  <span>Education:</span>
+                  <span>Bachelor of Technology - Computer Science and Engineering</span>
+                </li>
+                <li class="d-flex">
+                  <span>Language:</span>
+                  <span>English, Hindi</span>
+                </li>
+                <li class="d-flex">
+                  <span>Other Skills:</span>
+                  <span>Observational skills, Creativity, Knowledge of Networking fundamentals, Technical proficiency, Communication skills, Time management, Adaptability &amp; Attention to detail</span>
+                </li>
+                <li class="d-flex">
+                  <span>Interest:</span>
+                  <span>Traveling, Travel Photography, Teaching, Editing</span>
+                </li>
+              </ul>
 
-              <div class="counter-wrap ftco-animate d-flex mt-md-3">
-                <div class="text">
-                  <!-- <p class="mb-4"> <span class="number" data-number="30">0</span> <span>+</span> <span>&nbsp; Projects completed</span> </p> -->
-                  <p>
-                    <a href="https://www.linkedin.com/in/yash-rajput-xv" class="btn btn-primary py-3 px-3">LinkedIn</a>
-                    <a href="https://www.github.com/Rajput-xv" class="btn btn-white btn-outline-white py-3 px-3">GitHub</a>
-                  </p>
-                </div>
+              <div class="row mt-4">
+          <div class="col-12">
+            <div class="counter-wrap ftco-animate d-flex">
+              <div class="text text-center w-100">
+                <p>
+                  <a href="https://www.linkedin.com/in/yash-rajput-xv" class="btn btn-primary py-3 px-3 mr-2">LinkedIn</a>
+                  <a href="https://www.github.com/Rajput-xv" class="btn btn-white btn-outline-white py-3 px-3">GitHub</a>
+                </p>
               </div>
             </div>
           </div>
         </div>
+          </div>
+        </div>
+        
+        
       </div>
+    </section>
     </section>
 
     <section class="ftco-section ftco-no-pb" id="resume-section">
@@ -460,6 +768,130 @@
 
       </div>
     </section>
+    
+    <!-- Projects Section -->
+    <section class="ftco-section" id="projects-section">
+      <div class="container">
+        <div class="row justify-content-center mb-5 pb-3">
+          <div class="col-md-7 heading-section text-center ftco-animate">
+            <h1 class="big big-2">Projects</h1>
+            <h2 class="mb-4">My Projects</h2>
+            <p>Here are some of my notable projects that demonstrate my technical skills and problem-solving abilities.</p>
+          </div>
+        </div>
+        
+        <div class="row">
+          <div class="col-md-4 mb-4 project-card">
+            <div class="resume-wrap ftco-animate">
+              <h3>ODOO Hackathon</h3>
+              <div class="project-description">
+                <p>A project developed during the ODOO Hackathon showcasing enterprise resource planning solutions.</p>
+              </div>
+              <div class="project-links">
+                <a href="https://github.com/Aksh202004/ODOO-hackthon" class="btn btn-primary py-2 px-3">View Project</a>
+              </div>
+            </div>
+          </div>
+          
+          <div class="col-md-4 mb-4 project-card">
+            <div class="resume-wrap ftco-animate">
+              <h3>Health Report Analyzer</h3>
+              <div class="project-description">
+                <p>An application that analyzes health reports and provides insights based on medical data.</p>
+              </div>
+              <div class="project-links">
+                <a href="https://github.com/Rajput-xv/Health-Report-Analyzer" class="btn btn-primary py-2 px-3">View Project</a>
+              </div>
+            </div>
+          </div>
+          
+          <div class="col-md-4 mb-4 project-card">
+            <div class="resume-wrap ftco-animate">
+              <h3>Crisis Nexus</h3>
+              <div class="project-description">
+                <p>A comprehensive crisis management system with frontend and backend components.</p>
+              </div>
+              <div class="project-links">
+                <a href="https://github.com/Rajput-xv/Crisis-nexus-frontend" class="btn btn-primary py-2 px-3">Frontend</a>
+                <a href="https://github.com/Rajput-xv/Crisis-Nexus-server" class="btn btn-white btn-outline-primary py-2 px-3">Backend</a>
+              </div>
+            </div>
+          </div>
+          
+          <div class="col-md-4 mb-4 project-card">
+            <div class="resume-wrap ftco-animate">
+              <h3>Indian Bazaar</h3>
+              <div class="project-description">
+                <p>An e-commerce platform for Indian products, featuring a user-friendly shopping experience.</p>
+              </div>
+              <div class="project-links">
+                <a href="https://github.com/Rajput-xv/indian-bazaar" class="btn btn-primary py-2 px-3">View Project</a>
+              </div>
+            </div>
+          </div>
+          
+          <div class="col-md-4 mb-4 project-card">
+            <div class="resume-wrap ftco-animate">
+              <h3>Auction System</h3>
+              <div class="project-description">
+                <p>An online auction platform allowing users to bid on items in a secure environment.</p>
+              </div>
+              <div class="project-links">
+                <a href="https://github.com/Rajput-xv/Auction" class="btn btn-primary py-2 px-3">View Project</a>
+              </div>
+            </div>
+          </div>
+          
+          <div class="col-md-4 mb-4 project-card">
+            <div class="resume-wrap ftco-animate">
+              <h3>Auto-Fill</h3>
+              <div class="project-description">
+                <p>A tool that automatically fills in forms based on user data and preferences.</p>
+              </div>
+              <div class="project-links">
+                <a href="https://github.com/Rajput-xv/Auto-Fill" class="btn btn-primary py-2 px-3">View Project</a>
+              </div>
+            </div>
+          </div>
+          
+          <div class="col-md-4 mb-4 project-card">
+            <div class="resume-wrap ftco-animate">
+              <h3>Ratings and Review System</h3>
+              <div class="project-description">
+                <p>A system that allows users to rate and review products or services.</p>
+              </div>
+              <div class="project-links">
+                <a href="https://github.com/Rajput-xv/Ratings-and-Review-System" class="btn btn-primary py-2 px-3">View Project</a>
+              </div>
+            </div>
+          </div>
+          
+          <div class="col-md-4 mb-4 project-card">
+            <div class="resume-wrap ftco-animate">
+              <h3>Bitespeed Identity</h3>
+              <div class="project-description">
+                <p>An identity verification and management solution for secure user authentication.</p>
+              </div>
+              <div class="project-links">
+                <a href="https://github.com/Rajput-xv/Bitespeed-identity" class="btn btn-primary py-2 px-3">View Project</a>
+              </div>
+            </div>
+          </div>
+          
+          <div class="col-md-4 mb-4 project-card">
+            <div class="resume-wrap ftco-animate">
+              <h3>Crypto Tracker</h3>
+              <div class="project-description">
+                <p>A cryptocurrency tracking application to monitor prices and market trends.</p>
+              </div>
+              <div class="project-links">
+                <a href="https://github.com/Rajput-xv/crypto-tracker-y" class="btn btn-primary py-2 px-3">View Project</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
     <section class="ftco-section ftco-no-pt ftco-no-pb ftco-counter img" id="section-counter">
       <div class="hid" style="visibility:hidden">
@@ -555,7 +987,7 @@
               </div>
               <h3 class="mb-4">Download Resume</h3>
               <p>
-                <a href="https://drive.google.com/file/d/1dpB5CFVpJTXLowalixtHtlRCpXf4139S/view?usp=drive_link">resumelink</a>
+                <a href="https://drive.google.com/file/d/1pkz0Tvgmy7sof--dPhvirjkyzXATTSga/view?usp=sharing">Resume link</a>
               </p>
             </div>
           </div>
@@ -570,8 +1002,11 @@
                   </span>
                 </h2>
                 <div class="que" id="send-message">
-                  <form action="https://api.web3forms.com/submit" method="POST">
+                  <form action="https://api.web3forms.com/submit" method="POST" aria-label="Contact form">
                     <input type="hidden" name="access_key" value="1062bbfa-af4d-48d3-985b-56511cfb073d">
+                    <input type="hidden" name="redirect" value="https://web3forms.com/success">
+                    <input type="hidden" name="subject" value="New Contact Form Submission from Portfolio">
+                    <input type="checkbox" name="botcheck" class="d-none" style="display: none;">
                     <div class="row gy-4 gy-xl-5 p-4 p-xl-5">
                       <div class="col-12">
                         <label for="fullname" class="form-label">Full Name
@@ -612,8 +1047,16 @@
                         <textarea class="form-control" id="message" name="message" rows="3" required="required"></textarea>
                       </div>
                       <div class="col-12">
+                        <div class="form-check">
+                          <input class="form-check-input" type="checkbox" value="" id="privacy" name="privacy" required>
+                          <label class="form-check-label" for="privacy">
+                            I agree with the <a href="#" class="text-primary">Privacy Policy</a>
+                          </label>
+                        </div>
+                      </div>
+                      <div class="col-12">
                         <div class="d-grid"><br>
-                          <button class="btn btn-primary btn-lg" type="submit">Send Message</button>
+                          <button class="btn btn-primary btn-lg w-100" type="submit">Send Message</button>
                         </div>
                       </div>
                     </div>
@@ -684,6 +1127,7 @@
       <script src="js/aos.js"></script>
       <script src="js/jquery.animateNumber.min.js"></script>
       <script src="js/scrollax.min.js"></script>
+      <script src="js/contact-form.js"></script>
 
       <script src="js/main.js"></script>
       <script>

@@ -56,6 +56,135 @@
         margin-left: 10px;
       }
       
+      /* Additional experience section improvements */
+      .resume-section-title {
+        position: relative;
+        padding-bottom: 15px;
+        margin-bottom: 30px;
+      }
+      
+      .resume-section-title::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 80px;
+        height: 3px;
+        background-color: #ffbd39;
+      }
+      
+      .resume-wrap {
+        cursor: pointer;
+        transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+        position: relative;
+        border-radius: 10px;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        padding: 30px 25px;
+        margin-bottom: 20px;
+        overflow: hidden;
+        background-color: rgba(255, 255, 255, 0.02);
+        border: 1px solid rgba(255, 255, 255, 0.05);
+      }
+      
+      .resume-wrap:hover {
+        box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+        transform: translateY(-5px);
+        background-color: rgba(255, 255, 255, 0.05);
+      }
+      
+      /* Add a subtle shine effect on hover */
+      .resume-wrap::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 50%;
+        height: 100%;
+        background: linear-gradient(to right, transparent, rgba(255, 255, 255, 0.1), transparent);
+        transform: skewX(-25deg);
+        transition: all 0.7s ease;
+      }
+      
+      .resume-wrap:hover::before {
+        left: 150%;
+      }
+      
+      .resume-wrap h2 {
+        color: #ffbd39;
+        font-size: 22px;
+        font-weight: 600;
+        margin-bottom: 5px;
+        transition: all 0.3s ease;
+      }
+      
+      .resume-wrap .position {
+        color: rgba(255, 255, 255, 0.8);
+        font-weight: 500;
+        font-style: italic;
+      }
+      
+      .resume-wrap .date {
+        color: rgba(255, 255, 255, 0.6);
+        font-size: 14px;
+        margin-bottom: 10px;
+        display: inline-block;
+      }
+      
+      .resume-wrap .experience-content {
+        max-height: 0;
+        opacity: 0;
+        overflow: hidden;
+        transition: max-height 0.5s ease, opacity 0.3s ease, padding 0.3s ease;
+        padding: 0;
+      }
+      
+      .resume-wrap.expanded .experience-content {
+        max-height: 500px;
+        opacity: 1;
+        padding-top: 15px;
+      }
+      
+      /* Visual indicator for expandable content */
+      .resume-wrap::after {
+        content: "+";
+        position: absolute;
+        top: 15px;
+        right: 15px;
+        font-size: 24px;
+        font-weight: bold;
+        color: #ffbd39;
+        transition: all 0.3s ease;
+        width: 30px;
+        height: 30px;
+        text-align: center;
+        line-height: 28px;
+        border-radius: 50%;
+        background-color: rgba(255, 189, 57, 0.1);
+      }
+      
+      .resume-wrap.expanded::after {
+        content: "-";
+        transform: rotate(0deg);
+        background-color: rgba(255, 189, 57, 0.2);
+      }
+      
+      /* Improve list styling in experience */
+      .resume-wrap ul {
+        padding-left: 20px;
+        margin-top: 10px;
+      }
+      
+      .resume-wrap ul li {
+        margin-bottom: 8px;
+        position: relative;
+        padding-left: 5px;
+      }
+      
+      .resume-wrap ul li:last-child {
+        margin-bottom: 0;
+      }
+      
       /* Project cards equal height */
       .project-card {
         display: flex;
@@ -69,8 +198,46 @@
         height: 100%;
         padding: 20px;
         border-radius: 5px;
-        box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      }
+      
+      /* Project content styling */
+      .project-content {
+        max-height: 0;
+        opacity: 0;
+        overflow: hidden;
+        transition: max-height 0.5s ease, opacity 0.3s ease, padding 0.3s ease;
+        padding: 0;
+      }
+      
+      .resume-wrap.expanded .project-content {
+        max-height: 500px;
+        opacity: 1;
+        padding-top: 15px;
+        padding-bottom: 10px;
+      }
+      
+      /* Visual indicator for expandable project content */
+      .project-card .resume-wrap::after {
+        content: "+";
+        position: absolute;
+        top: 15px;
+        right: 15px;
+        font-size: 24px;
+        font-weight: bold;
+        color: #ffbd39;
         transition: all 0.3s ease;
+        width: 30px;
+        height: 30px;
+        text-align: center;
+        line-height: 28px;
+        border-radius: 50%;
+        background-color: rgba(255, 189, 57, 0.1);
+      }
+      
+      .project-card .resume-wrap.expanded::after {
+        content: "-";
+        transform: rotate(0deg);
+        background-color: rgba(255, 189, 57, 0.2);
       }
       
       .project-card .resume-wrap:hover {
@@ -81,6 +248,27 @@
       .project-card .project-description {
         flex-grow: 1;
         margin-bottom: 15px;
+      }
+      
+      /* Project overview styling */
+      .project-overview {
+        margin: 10px 0;
+        color: rgba(255, 255, 255, 0.8);
+        font-size: 14px;
+        line-height: 1.5;
+      }
+      
+      /* Live Demo button styling */
+      .btn-demo {
+        background-color: #28a745;
+        color: white;
+        border-color: #28a745;
+      }
+      
+      .btn-demo:hover {
+        background-color: #218838;
+        border-color: #1e7e34;
+        color: white;
       }
       
       /* Mobile project card improvements */
@@ -99,9 +287,19 @@
         
         .project-links a {
           margin-bottom: 5px;
+          display: inline-block;
+          width: auto;
+          text-align: center;
+        }
+        
+        .project-links .ml-2 {
+          margin-left: 0.5rem !important;
+        }
+        
+        .project-links .mt-2 {
+          margin-top: 0.5rem !important;
           display: block;
           width: 100%;
-          text-align: center;
         }
       }
 
@@ -355,10 +553,6 @@
               <a href="#contact-section" class="nav-link">
                 <span>Contact</span></a>
             </li>
-            <!-- <li class="nav-item">
-              <a href="#send-message" class="nav-link">
-                <span>Message me</span></a>
-            </li> -->
           </ul>
         </div>
       </div>
@@ -407,17 +601,7 @@
                     // Start the typing animation loop
                     playTypingAnimation(typingTexts[0]);
                   </script><br><br>
-                  <!-- <h2 class="d-flex" style="margin-bottom: 0">With over 5 years of experience</h2> -->
-                  <!-- <br> -->
-                  <!-- <div class="row justify-content-center mt-5">
-                    <div class="col-md-6 text-center ftco-animate">
-                      <p>
-                        <a href="https://drive.google.com/file/d/1syvfxSxhb2KQeRQ0Y0qr7BQErNZHDX-Z/view?usp=sharing" class="btn btn-primary py-4 px-5">Download CV</a>
-                      </p>
-                    </div>
-                  </div> -->
                   <p>
-                    <!-- <a href="https://www.instagram.com/rajput_xv" class="btn btn-primary py-3 px-4">My Instagram</a> -->
                     <a href="https://drive.google.com/file/d/1pkz0Tvgmy7sof--dPhvirjkyzXATTSga/view?usp=sharing" class="btn btn-primary py-3 px-4">Download CV</a>
                     <a href="https://www.linkedin.com/in/yash-rajput-xv" class="btn btn-white btn-outline-white py-3 px-4">My Linkedin</a>
                   </p>
@@ -674,34 +858,46 @@
 
     <section class="ftco-section ftco-no-pb" id="resume-section">
       <div class="container">
-        <!-- <div class="row justify-content-center pb-5">
-          <div class="col-md-10 heading-section text-center ftco-animate">
-            <h1 class="big big-2">Resume</h1>
-            <h2 class="mb-4">Resume</h2>
-            <p>Specialized in crafting visually appealing webpages using HTML, CSS, Tailwind, Bootstrap, JavaScript, Material UI, React JS and RESTful API. Possesses a strong foundation in Python, C++, C, and Java, with expertise in SQL. Eager to apply expertise to drive innovative web development projects forward.</p>
-          </div>
-        </div> -->
 
-        <div class="row">
-          <h1 class="big-4">Experience</h1>
+        <div class="row mb-4">
+          <h1 class="big-4 mb-2">My Professional Journey</h1>
           <div class="underline"></div>
         </div>
-        <br>
 
         <div class="row">
 
-          <div class="col-md-6 ">
+          <div class="col-md-6">
             <div class="resume-wrap ftco-animate">
-              <span class="date">May 2024 - August 2024  and</span><br>
-              <span class="date">October 2024 - November 2024</span>
-              <h2 class="pb-1">Open-Source Contributor</h2>
+              <span class="date">June 2025 - Present</span>
+              <h2>Web Development Intern</h2>
+              <span class="position">Rekniq Consultants</span>
+              <div class="experience-content">
+                <p class="mt-4">
+                  <ul>
+                    <li>Developed Vision E Academy educational website from scratch using Google Sites, implementing responsive design and user friendly navigation architecture.</li>
+                    <li>Enhanced Odoo-based e-commerce platform frontend with improved UI responsiveness, streamlined checkout process, and optimized product browsing functionality.</li>
+                    <li>Redesigned website modules using modern UI/UX standards and integrated interactive animations to increase customer engagement and user experience.</li>
+                    <li>Built dedicated content management section for company articles and updates, strengthening digital presence and implementing SEO-optimized content strategy.</li>
+                  </ul>
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-6">
+            <div class="resume-wrap ftco-animate">
+              <span class="date">May 2024 - August 2024 & October 2024 - November 2024</span>
+              <h2>Open-Source Contributor</h2>
               <span class="position">Girl Script Summer of Code</span>
-              <p class="mt-4"><!--The GirlScript Foundation, a leading organization in India, has spent five years empowering young people through tech education and fostering diversity, aiming to bridge gaps and promote equal access to technological knowledge. -->
-                <ul>
-                  <li>Actively contributed to web development projects using technology stacks such as HTML, CSS, JavaScript, ReactJS, NodeJS, Express JS, MongoDB, and RESTful APIs, enhancing project outcomes and user engagement through the development of intuitive front-end interfaces.</li>
-                  <li>Maintained and optimized existing codebases through effective debugging practices while collaborating on impactful open-source projects. Achieved recognition by ranking 304 out of over 27,000 participants in GSSoC’24, earning 6 badges for significant contributions to the open-source community.</li>
-                </ul>
-              </p>
+              <div class="experience-content">
+                <p class="mt-4">
+                  <ul>
+                    <li>A 3-month competitive coding program where I ranked 304th among 27,000+ developers.</li>
+                    <li>Enhanced the project by implementing responsive dashboard components that reduced page load times by 30%, receiving commendation from the project maintainer.</li>
+                    <li>Collaborated with a team of developers to redesign the user onboarding flow, which increased new user retention by 40%.</li>
+                  </ul>
+                </p>
+              </div>
             </div>
           </div>
 
@@ -710,23 +906,22 @@
               <span class="date">December 2024 - January 2025</span>
               <h2>Space Tech Intern</h2>
               <span class="position">India Space Lab</span>
-              <p class="mt-4">
-                <ul>
-                  <li><strong>Advanced Drone Technology (Air Taxi):</strong> Gained hands-on experience in advanced drone technologies, focusing on air taxi innovations and applications.</li>
+              <div class="experience-content">
+                <p class="mt-4">
+                  <ul>
+                    <li><strong>Advanced Drone Technology (Air Taxi):</strong> Gained hands-on experience in advanced drone technologies, focusing on air taxi innovations and applications.</li>
                   <li><strong>CanSat and CubeSat (Student Satellite):</strong> Participated in a comprehensive workshop on CanSat and CubeSat design, development, and deployment.</li>
                   <li><strong>Astronomy Training Program:</strong> Completed an intensive training program covering key concepts in astronomy, including celestial navigation and observational techniques.</li>
                   <li><strong>Space Entrepreneurship Sessions:</strong> Engaged in sessions aimed at fostering entrepreneurial skills within the space sector, including business model development and funding strategies.</li>
-                  <!-- <li><strong>Advanced Drone Technology (Air Taxi):</strong> Gained hands-on experience in advanced drone technologies, focusing on air taxi innovations and applications, which are poised to transform urban transportation through electric vertical takeoff and landing (eVTOL) systems.</li>
-                  <li><strong>CanSat and CubeSat (Student Satellite):</strong> Participated in a comprehensive workshop on CanSat and CubeSat design, development, and deployment, enhancing skills in satellite technology and engineering.</li>
-                  <li><strong>Astronomy Training Program:</strong> Completed an intensive training program covering key concepts in astronomy, including celestial navigation and observational techniques, which deepened my understanding of astronomical phenomena.</li>
-                  <li><strong>Space Entrepreneurship Sessions:</strong> Engaged in sessions aimed at fostering entrepreneurial skills within the space sector, focusing on business model development and funding strategies to promote innovation in space technologies.</li> -->
-                </ul>
-              </p>
+                  </ul>
+                </p>
+              </div>
             </div>
           </div>
 
 
           <!-- ADD more here in future -->
+
         </div>
 
         <br>
@@ -744,7 +939,14 @@
               <span class="date">2022-2024</span>
               <h2>Bachelor of Technology Computer Science and Engineering</h2>
               <span class="position">Vellore Institute of Technology, Bhopal</span>
-              <p class="mt-4">CGPA: 8.79</p>
+              <div class="experience-content">
+                <p class="mt-4">
+                  <ul>
+                    <li>CGPA: 8.79</li>
+                    <li><strong>Relevant Coursework:</strong> Object-Oriented Programming, Database Management Systems, Data Structures and Algorithms, Operating Systems, Computer Networks, Machine Learning, Artificial Intelligence, Theory of Computation, Software Engineering, Design and Analysis ofAlgorithms</li>
+                  </ul>
+                </p>
+              </div>
             </div>
           </div>
 
@@ -752,17 +954,17 @@
             <div class="resume-wrap ftco-animate">
               <span class="date">2020-2021</span>
               <h2>Higher Secondary School</h2>
-              <span class="position">Kendriya Vidyalaya, Punjab Lines, Meerut Cantt  CBSE (PCM with Computer Science)</span>
-              <p class="mt-4">Percentage: 94.8%.</p>
+              <span class="position">Kendriya Vidyalaya, Punjab Lines, Meerut Cantt</span>
+              <div class="experience-content">
+                <p class="mt-4">
+                  <ul>
+                    <li>Percentage: 94.8%</li>
+                    <li>Board: CBSE</li>
+                    <li>Subjects: Physics, Chemistry, Mathematics, Computer Science, English</li>
+                  </ul>
+                </p>
+              </div>
             </div>
-          </div>
-        </div>
-
-        <div class="row justify-content-center mt-5">
-          <div class="col-md-6 text-center ftco-animate">
-            <p>
-              <!-- <a href="https://drive.google.com/file/d/1syvfxSxhb2KQeRQ0Y0qr7BQErNZHDX-Z/view?usp=sharing" class="btn btn-primary hidden py-4 px-5">Download CV</a> -->
-            </p>
           </div>
         </div>
 
@@ -776,19 +978,27 @@
           <div class="col-md-7 heading-section text-center ftco-animate">
             <h1 class="big big-2">Projects</h1>
             <h2 class="mb-4">My Projects</h2>
-            <p>Here are some of my notable projects that demonstrate my technical skills and problem-solving abilities.</p>
+            <p>Here are some of my notable projects that demonstrate my technical skills and problem solving abilities.</p>
           </div>
         </div>
         
         <div class="row">
           <div class="col-md-4 mb-4 project-card">
             <div class="resume-wrap ftco-animate">
-              <h3>ODOO Hackathon</h3>
-              <div class="project-description">
-                <p>A project developed during the ODOO Hackathon showcasing enterprise resource planning solutions.</p>
+              <h3>SynapseQ - Q&A Platform</h3>
+              <p class="project-overview">A comprehensive question-and-answer platform built during ODOO Hackathon that allows users to ask questions, provide answers, and build community knowledge.</p>
+              <div class="project-content">
+                <div class="project-description">
+                  <ul class="mt-2">
+                    <li>Implemented user authentication with JWT for secure login and registration</li>
+                    <li>Created voting system for questions and answers with reputation tracking</li>
+                    <li>Built tagging system for categorizing questions with smart filtering</li>
+                  </ul>
+                </div>
               </div>
               <div class="project-links">
-                <a href="https://github.com/Aksh202004/ODOO-hackthon" class="btn btn-primary py-2 px-3">View Project</a>
+                <a href="https://github.com/Aksh202004/ODOO-hackthon" class="btn btn-primary py-2 px-3" target="_blank">View Project</a>
+                <!-- <a href="https://synapseq-demo.vercel.app" class="btn btn-demo py-2 px-3 ml-2">Live Demo</a> -->
               </div>
             </div>
           </div>
@@ -796,11 +1006,19 @@
           <div class="col-md-4 mb-4 project-card">
             <div class="resume-wrap ftco-animate">
               <h3>Health Report Analyzer</h3>
-              <div class="project-description">
-                <p>An application that analyzes health reports and provides insights based on medical data.</p>
+              <p class="project-overview">A medical report analysis tool that extracts data from lab reports and presents it in organized tables with trend analysis.</p>
+              <div class="project-content">
+                <div class="project-description">
+                  <ul class="mt-2">
+                    <li>Automated extraction of medical data from PDF/image lab reports</li>
+                    <li>Implemented secure JWT authentication for user data protection</li>
+                    <li>Created visualization tools for tracking health metrics over time</li>
+                  </ul>
+                </div>
               </div>
               <div class="project-links">
-                <a href="https://github.com/Rajput-xv/Health-Report-Analyzer" class="btn btn-primary py-2 px-3">View Project</a>
+                <a href="https://github.com/Rajput-xv/Health-Report-Analyzer" class="btn btn-primary py-2 px-3" target="_blank">View Project</a>
+                <a href="https://health-report-analyzer.vercel.app/" class="btn btn-demo py-2 px-3 ml-2" target="_blank">Live Demo</a>
               </div>
             </div>
           </div>
@@ -808,12 +1026,20 @@
           <div class="col-md-4 mb-4 project-card">
             <div class="resume-wrap ftco-animate">
               <h3>Crisis Nexus</h3>
-              <div class="project-description">
-                <p>A comprehensive crisis management system with frontend and backend components.</p>
+              <p class="project-overview">A comprehensive disaster management platform designed to enhance community resilience and coordinate relief efforts.</p>
+              <div class="project-content">
+                <div class="project-description">
+                  <ul class="mt-2">
+                    <li>Implemented real-time incident reporting with location-based mapping</li>
+                    <li>Built hospital finder system with route calculation and directions</li>
+                    <li>Created resource management system for tracking community resources</li>
+                  </ul>
+                </div>
               </div>
               <div class="project-links">
-                <a href="https://github.com/Rajput-xv/Crisis-nexus-frontend" class="btn btn-primary py-2 px-3">Frontend</a>
-                <a href="https://github.com/Rajput-xv/Crisis-Nexus-server" class="btn btn-white btn-outline-primary py-2 px-3">Backend</a>
+                <a href="https://github.com/Rajput-xv/Crisis-nexus-frontend" class="btn btn-primary py-2 px-3" target="_blank">Frontend</a>
+                <a href="https://github.com/Rajput-xv/Crisis-Nexus-server" class="btn btn-white btn-outline-primary py-2 px-3" target="_blank">Backend</a>
+                <a href="https://crisis-nexus.vercel.app/" class="btn btn-demo py-2 px-3 mt-2" target="_blank">Live Demo</a>
               </div>
             </div>
           </div>
@@ -821,11 +1047,19 @@
           <div class="col-md-4 mb-4 project-card">
             <div class="resume-wrap ftco-animate">
               <h3>Indian Bazaar</h3>
-              <div class="project-description">
-                <p>An e-commerce platform for Indian products, featuring a user-friendly shopping experience.</p>
+              <p class="project-overview">A full-stack marketplace connecting street food vendors with raw material suppliers in India.</p>
+              <div class="project-content">
+                <div class="project-description">
+                  <ul class="mt-2">
+                    <li>Implemented JWT-based authentication with role-based access control</li>
+                    <li>Created dual user roles with vendor and supplier dashboards</li>
+                    <li>Built location-based services for discovering nearby suppliers</li>
+                  </ul>
+                </div>
               </div>
               <div class="project-links">
-                <a href="https://github.com/Rajput-xv/indian-bazaar" class="btn btn-primary py-2 px-3">View Project</a>
+                <a href="https://github.com/Rajput-xv/indian-bazaar" class="btn btn-primary py-2 px-3" target="_blank">View Project</a>
+                <a href="https://indian-bazaar.vercel.app/" class="btn btn-demo py-2 px-3 ml-2" target="_blank">Live Demo</a>
               </div>
             </div>
           </div>
@@ -833,23 +1067,39 @@
           <div class="col-md-4 mb-4 project-card">
             <div class="resume-wrap ftco-animate">
               <h3>Auction System</h3>
-              <div class="project-description">
-                <p>An online auction platform allowing users to bid on items in a secure environment.</p>
+              <p class="project-overview">A full-stack auction application where users can create, bid on, and manage auction items in real-time.</p>
+              <div class="project-content">
+                <div class="project-description">
+                  <ul class="mt-2">
+                    <li>Built secure authentication system with JWT tokens</li>
+                    <li>Implemented real-time bidding functionality for active auctions</li>
+                    <li>Created comprehensive auction management system</li>
+                  </ul>
+                </div>
               </div>
               <div class="project-links">
-                <a href="https://github.com/Rajput-xv/Auction" class="btn btn-primary py-2 px-3">View Project</a>
+                <a href="https://github.com/Rajput-xv/Auction" class="btn btn-primary py-2 px-3" target="_blank">View Project</a>
+                <!-- <a href="https://auction-system-yash.vercel.app" class="btn btn-demo py-2 px-3 ml-2">Live Demo</a> -->
               </div>
             </div>
           </div>
           
           <div class="col-md-4 mb-4 project-card">
             <div class="resume-wrap ftco-animate">
-              <h3>Auto-Fill</h3>
-              <div class="project-description">
-                <p>A tool that automatically fills in forms based on user data and preferences.</p>
+              <h3>Auto-Fill Assistant</h3>
+              <p class="project-overview">A Chrome extension that automatically saves and fills form data across any website.</p>
+              <div class="project-content">
+                <div class="project-description">
+                  <ul class="mt-2">
+                    <li>Implemented smart field matching using labels and context</li>
+                    <li>Created intelligent grouping for similar field types</li>
+                    <li>Built privacy-focused local storage system for user data</li>
+                  </ul>
+                </div>
               </div>
               <div class="project-links">
-                <a href="https://github.com/Rajput-xv/Auto-Fill" class="btn btn-primary py-2 px-3">View Project</a>
+                <a href="https://github.com/Rajput-xv/Auto-Fill" class="btn btn-primary py-2 px-3" target="_blank">View Project</a>
+                <!-- <a href="https://chrome.google.com/webstore/detail/auto-fill-assistant/hfkpnchbmggecheaafldkpnpgnlnhcma" class="btn btn-demo py-2 px-3 ml-2">Chrome Store</a> -->
               </div>
             </div>
           </div>
@@ -857,11 +1107,19 @@
           <div class="col-md-4 mb-4 project-card">
             <div class="resume-wrap ftco-animate">
               <h3>Ratings and Review System</h3>
-              <div class="project-description">
-                <p>A system that allows users to rate and review products or services.</p>
+              <p class="project-overview">A modern web application where users can rate and review products with photo uploads and smart tag generation.</p>
+              <div class="project-content">
+                <div class="project-description">
+                  <ul class="mt-2">
+                    <li>Implemented cloud-based image storage with automatic compression</li>
+                    <li>Created star rating system with detailed review capabilities</li>
+                    <li>Built custom tagging system for categorizing reviews</li>
+                  </ul>
+                </div>
               </div>
               <div class="project-links">
-                <a href="https://github.com/Rajput-xv/Ratings-and-Review-System" class="btn btn-primary py-2 px-3">View Project</a>
+                <a href="https://github.com/Rajput-xv/Ratings-and-Review-System" class="btn btn-primary py-2 px-3" target="_blank">View Project</a>
+                <a href="https://ratings-and-review-system-two.vercel.app/" class="btn btn-demo py-2 px-3 ml-2" target="_blank">Live Demo</a>
               </div>
             </div>
           </div>
@@ -869,11 +1127,19 @@
           <div class="col-md-4 mb-4 project-card">
             <div class="resume-wrap ftco-animate">
               <h3>Bitespeed Identity</h3>
-              <div class="project-description">
-                <p>An identity verification and management solution for secure user authentication.</p>
+              <p class="project-overview">A service to track customer identities across multiple purchases and contact methods.</p>
+              <div class="project-content">
+                <div class="project-description">
+                  <ul class="mt-2">
+                    <li>Implemented identity consolidation across email and phone number</li>
+                    <li>Created primary/secondary contact linking system</li>
+                    <li>Built RESTful API with identity identification endpoint</li>
+                  </ul>
+                </div>
               </div>
               <div class="project-links">
-                <a href="https://github.com/Rajput-xv/Bitespeed-identity" class="btn btn-primary py-2 px-3">View Project</a>
+                <a href="https://github.com/Rajput-xv/Bitespeed-identity" class="btn btn-primary py-2 px-3" target="_blank">View Project</a>
+                <!-- <a href="https://bitespeed-identity.onrender.com" class="btn btn-demo py-2 px-3 ml-2">Live Demo</a> -->
               </div>
             </div>
           </div>
@@ -881,11 +1147,19 @@
           <div class="col-md-4 mb-4 project-card">
             <div class="resume-wrap ftco-animate">
               <h3>Crypto Tracker</h3>
-              <div class="project-description">
-                <p>A cryptocurrency tracking application to monitor prices and market trends.</p>
+              <p class="project-overview">A cryptocurrency tracking application that helps users monitor prices and market trends.</p>
+              <div class="project-content">
+                <div class="project-description">
+                  <ul class="mt-2">
+                    <li>Integrated with cryptocurrency APIs for real-time data</li>
+                    <li>Built price trend visualization tools with chart libraries</li>
+                    <li>Implemented market prediction functionality using Python</li>
+                  </ul>
+                </div>
               </div>
               <div class="project-links">
-                <a href="https://github.com/Rajput-xv/crypto-tracker-y" class="btn btn-primary py-2 px-3">View Project</a>
+                <a href="https://github.com/Rajput-xv/crypto-tracker-y" class="btn btn-primary py-2 px-3" target="_blank">View Project</a>
+                <!-- <a href="https://crypto-tracker-yash.vercel.app" class="btn btn-demo py-2 px-3 ml-2">Live Demo</a> -->
               </div>
             </div>
           </div>
@@ -894,7 +1168,7 @@
     </section>
 
     <section class="ftco-section ftco-no-pt ftco-no-pb ftco-counter img" id="section-counter">
-      <div class="hid" style="visibility:hidden">
+      <!-- <div class="hid" style="visibility:hidden">
         <div class="container">
           <div class="row d-md-flex align-items-center">
             <div class="col-md d-flex justify-content-center counter-wrap ftco-animate">
@@ -905,6 +1179,7 @@
                 </div>
               </div>
             </div>
+
             <div class="col-md d-flex justify-content-center counter-wrap ftco-animate">
               <div class="block-18">
                 <div class="text">
@@ -913,17 +1188,17 @@
                 </div>
               </div>
             </div>
-            <!-- <div class="col-md d-flex justify-content-center counter-wrap ftco-animate"> <div class="block-18"> <div class="text"> <strong class="number" data-number="1000">0</strong> <span>Mentored Students</span> </div> </div> </div> <div class="col-md d-flex justify-content-center counter-wrap ftco-animate"> <div class="block-18"> <div class="text"> <strong class="number" data-number="500">0</strong> <span>Cups of coffee</span> </div> </div> </div> -->
+
           </div>
         </div>
-      </div>
+      </div> -->
 
       <div class="ftco-section ftco-hireme img margin-top" style="background-image: url(images/bg_1.jpg)">
         <!-- <div class="container"> -->
         <div class="row justify-content-center">
           <div class="col-md-7 ftco-animate text-center">
             <h2>Here's my<span>
-                <button id="gitbtn" class="btn btn-primary py-3 px-5" onclick="gitClick()">GitHub</button>
+                <button id="gitbtn" class="btn btn-primary py-2 px-3" onclick="gitClick()">GitHub</button>
               </span>
             </h2>
             <div class="heading">
@@ -1134,6 +1409,111 @@
         function gitClick() {
           window.location.href = 'https://www.github.com/Rajput-xv';
         }
+        
+        // Experience section toggle functionality
+        document.addEventListener('DOMContentLoaded', function() {
+          // Fix the HTML structure first by wrapping the existing content
+          const experienceSection = document.querySelector('#resume-section');
+          
+          if (experienceSection) {
+            // Clean up the HTML structure by removing extra closing tags and elements
+            const extraClosingTags = experienceSection.querySelectorAll('.row > .col-md-6 + ul, .row > .col-md-6 + p');
+            extraClosingTags.forEach(tag => {
+              tag.parentNode.removeChild(tag);
+            });
+            
+            // Select all resume wraps in the experience section
+            const resumeWraps = experienceSection.querySelectorAll('.resume-wrap');
+            
+            resumeWraps.forEach(wrap => {
+              // Find all paragraphs with the mt-4 class that contain the content
+              const content = wrap.querySelector('p.mt-4');
+              
+              if (content) {
+                // Check if it's already wrapped in an experience-content div
+                const parentDiv = content.parentNode;
+                
+                if (!parentDiv.classList.contains('experience-content')) {
+                  // Create a new div to wrap the content
+                  const experienceContent = document.createElement('div');
+                  experienceContent.className = 'experience-content';
+                  
+                  // Move the content to the new div
+                  experienceContent.appendChild(content.cloneNode(true));
+                  
+                  // Replace the original content with the wrapped version
+                  content.parentNode.replaceChild(experienceContent, content);
+                }
+              }
+              
+              // Add click event to toggle visibility
+              wrap.addEventListener('click', function(e) {
+                // Don't toggle if clicking on a link
+                if (e.target.tagName.toLowerCase() === 'a') {
+                  return;
+                }
+                
+                // Toggle the expanded class
+                this.classList.toggle('expanded');
+                
+                // Ensure all other cards are closed when opening a new one
+                if (this.classList.contains('expanded')) {
+                  resumeWraps.forEach(otherWrap => {
+                    if (otherWrap !== this && otherWrap.classList.contains('expanded')) {
+                      otherWrap.classList.remove('expanded');
+                    }
+                  });
+                }
+              });
+            });
+            
+            // Open the first experience card by default after a slight delay
+            setTimeout(() => {
+              if (resumeWraps.length > 0) {
+                resumeWraps[0].classList.add('expanded');
+              }
+            }, 500);
+          }
+          
+          // Projects section toggle functionality
+          const projectsSection = document.querySelector('#projects-section');
+          
+          if (projectsSection) {
+            // Select all resume wraps in the projects section
+            const projectWraps = projectsSection.querySelectorAll('.resume-wrap');
+            
+            projectWraps.forEach(wrap => {
+              // Add click event to toggle visibility
+              wrap.addEventListener('click', function(e) {
+                // Don't toggle if clicking on a link
+                if (e.target.tagName.toLowerCase() === 'a' || 
+                    e.target.closest('.project-links') !== null) {
+                  return;
+                }
+                
+                // Toggle the expanded class
+                this.classList.toggle('expanded');
+                
+                // Ensure all other cards are closed when opening a new one
+                if (this.classList.contains('expanded')) {
+                  projectWraps.forEach(otherWrap => {
+                    if (otherWrap !== this && otherWrap.classList.contains('expanded')) {
+                      otherWrap.classList.remove('expanded');
+                    }
+                  });
+                }
+              });
+            });
+            
+            // Open a random project card by default after a slight delay for visual interest
+            setTimeout(() => {
+              if (projectWraps.length > 0) {
+                const randomIndex = Math.floor(Math.random() * projectWraps.length);
+                projectWraps[randomIndex].classList.add('expanded');
+              }
+            }, 700);
+          }
+        });
       </script>
 
     </body>

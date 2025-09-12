@@ -1467,12 +1467,7 @@
               });
             });
             
-            // Open the first experience card by default after a slight delay
-            setTimeout(() => {
-              if (resumeWraps.length > 0) {
-                resumeWraps[0].classList.add('expanded');
-              }
-            }, 500);
+            // All cards start collapsed by default
           }
           
           // Projects section toggle functionality
@@ -1505,13 +1500,7 @@
               });
             });
             
-            // Open a random project card by default after a slight delay for visual interest
-            setTimeout(() => {
-              if (projectWraps.length > 0) {
-                const randomIndex = Math.floor(Math.random() * projectWraps.length);
-                projectWraps[randomIndex].classList.add('expanded');
-              }
-            }, 700);
+            // All project cards start collapsed by default
           }
         });
       </script>

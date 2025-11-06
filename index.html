@@ -1,1528 +1,640 @@
 <!DOCTYPE html>
 <html lang="en">
-
-  <head>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yash Verma - Full Stack Developer</title>
     <link rel="icon" type="image/svg+xml" href="images/favicon.svg">
-    <title>Yash Verma Portfolio</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+    <!-- Meta Tags -->
     <meta name="description" content="Portfolio of Yash Verma - Full Stack Developer & Software Developer with expertise in React, Node.js, and various web technologies">
     <meta name="keywords" content="Yash Verma, Full Stack Developer, Software Developer, Web Development, Portfolio, React, Node.js, JavaScript">
     <meta name="author" content="Yash Verma">
-    <meta name="theme-color" content="#000000">
-    <!-- Open Graph / Social Media Meta Tags -->
-    <meta property="og:title" content="Yash Verma Portfolio">
+    <meta name="theme-color" content="#6366f1">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="Yash Verma - Full Stack Developer">
     <meta property="og:description" content="Full Stack Developer & Software Developer Portfolio">
     <meta property="og:type" content="website">
     <meta property="og:image" content="images/about-me.jpg">
     
-    <!-- Apple Touch Icon -->
-    <link rel="apple-touch-icon" href="images/favicon.svg">
-
-    <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900" rel="stylesheet">
+    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-
-    <link rel="stylesheet" href="css/open-iconic-bootstrap.min.css">
-    <link rel="stylesheet" href="css/animate.css">
-
-    <link rel="stylesheet" href="css/owl.carousel.min.css">
-    <link rel="stylesheet" href="css/owl.theme.default.min.css">
-    <link rel="stylesheet" href="css/magnific-popup.css">
-
-    <link rel="stylesheet" href="css/aos.css">
-
-    <link rel="stylesheet" href="css/ionicons.min.css">
-
-    <link rel="stylesheet" href="css/flaticon.css">
-    <link rel="stylesheet" href="css/icomoon.css">
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/contact-form.css">
-
-    <style>
-      /*======================================
-//--//-->   ABOUT
-======================================*/
-
-      .about-mf .box-shadow-full {
-        padding-top: 4rem;
-        padding-bottom: 4rem;
-      }
-
-      .about-mf .about-img {
-        margin-bottom: 2rem;
-      }
-
-      .about-mf .about-img img {
-        margin-left: 10px;
-      }
-      
-      /* Additional experience section improvements */
-      .resume-section-title {
-        position: relative;
-        padding-bottom: 15px;
-        margin-bottom: 30px;
-      }
-      
-      .resume-section-title::after {
-        content: '';
-        position: absolute;
-        bottom: 0;
-        left: 50%;
-        transform: translateX(-50%);
-        width: 80px;
-        height: 3px;
-        background-color: #ffbd39;
-      }
-      
-      .resume-wrap {
-        cursor: pointer;
-        transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
-        position: relative;
-        border-radius: 10px;
-        box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-        padding: 30px 25px;
-        margin-bottom: 20px;
-        overflow: hidden;
-        background-color: rgba(255, 255, 255, 0.02);
-        border: 1px solid rgba(255, 255, 255, 0.05);
-      }
-      
-      .resume-wrap:hover {
-        box-shadow: 0 10px 25px rgba(0,0,0,0.2);
-        transform: translateY(-5px);
-        background-color: rgba(255, 255, 255, 0.05);
-      }
-      
-      /* Add a subtle shine effect on hover */
-      .resume-wrap::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: -100%;
-        width: 50%;
-        height: 100%;
-        background: linear-gradient(to right, transparent, rgba(255, 255, 255, 0.1), transparent);
-        transform: skewX(-25deg);
-        transition: all 0.7s ease;
-      }
-      
-      .resume-wrap:hover::before {
-        left: 150%;
-      }
-      
-      .resume-wrap h2 {
-        color: #ffbd39;
-        font-size: 22px;
-        font-weight: 600;
-        margin-bottom: 5px;
-        transition: all 0.3s ease;
-      }
-      
-      .resume-wrap .position {
-        color: rgba(255, 255, 255, 0.8);
-        font-weight: 500;
-        font-style: italic;
-      }
-      
-      .resume-wrap .date {
-        color: rgba(255, 255, 255, 0.6);
-        font-size: 14px;
-        margin-bottom: 10px;
-        display: inline-block;
-      }
-      
-      .resume-wrap .experience-content {
-        max-height: 0;
-        opacity: 0;
-        overflow: hidden;
-        transition: max-height 0.5s ease, opacity 0.3s ease, padding 0.3s ease;
-        padding: 0;
-      }
-      
-      .resume-wrap.expanded .experience-content {
-        max-height: 500px;
-        opacity: 1;
-        padding-top: 15px;
-      }
-      
-      /* Visual indicator for expandable content */
-      .resume-wrap::after {
-        content: "+";
-        position: absolute;
-        top: 15px;
-        right: 15px;
-        font-size: 24px;
-        font-weight: bold;
-        color: #ffbd39;
-        transition: all 0.3s ease;
-        width: 30px;
-        height: 30px;
-        text-align: center;
-        line-height: 28px;
-        border-radius: 50%;
-        background-color: rgba(255, 189, 57, 0.1);
-      }
-      
-      .resume-wrap.expanded::after {
-        content: "-";
-        transform: rotate(0deg);
-        background-color: rgba(255, 189, 57, 0.2);
-      }
-      
-      /* Improve list styling in experience */
-      .resume-wrap ul {
-        padding-left: 20px;
-        margin-top: 10px;
-      }
-      
-      .resume-wrap ul li {
-        margin-bottom: 8px;
-        position: relative;
-        padding-left: 5px;
-      }
-      
-      .resume-wrap ul li:last-child {
-        margin-bottom: 0;
-      }
-      
-      /* Project cards equal height */
-      .project-card {
-        display: flex;
-        flex-direction: column;
-        height: 100%;
-      }
-      
-      .project-card .resume-wrap {
-        display: flex;
-        flex-direction: column;
-        height: 100%;
-        padding: 20px;
-        border-radius: 5px;
-      }
-      
-      /* Project content styling */
-      .project-content {
-        max-height: 0;
-        opacity: 0;
-        overflow: hidden;
-        transition: max-height 0.5s ease, opacity 0.3s ease, padding 0.3s ease;
-        padding: 0;
-      }
-      
-      .resume-wrap.expanded .project-content {
-        max-height: 500px;
-        opacity: 1;
-        padding-top: 15px;
-        padding-bottom: 10px;
-      }
-      
-      /* Visual indicator for expandable project content */
-      .project-card .resume-wrap::after {
-        content: "+";
-        position: absolute;
-        top: 15px;
-        right: 15px;
-        font-size: 24px;
-        font-weight: bold;
-        color: #ffbd39;
-        transition: all 0.3s ease;
-        width: 30px;
-        height: 30px;
-        text-align: center;
-        line-height: 28px;
-        border-radius: 50%;
-        background-color: rgba(255, 189, 57, 0.1);
-      }
-      
-      .project-card .resume-wrap.expanded::after {
-        content: "-";
-        transform: rotate(0deg);
-        background-color: rgba(255, 189, 57, 0.2);
-      }
-      
-      .project-card .resume-wrap:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 10px 20px rgba(0,0,0,0.15);
-      }
-      
-      .project-card .project-description {
-        flex-grow: 1;
-        margin-bottom: 15px;
-      }
-      
-      /* Project overview styling */
-      .project-overview {
-        margin: 10px 0;
-        color: rgba(255, 255, 255, 0.8);
-        font-size: 14px;
-        line-height: 1.5;
-      }
-      
-      /* Live Demo button styling */
-      .btn-demo {
-        background-color: #28a745;
-        color: white;
-        border-color: #28a745;
-      }
-      
-      .btn-demo:hover {
-        background-color: #218838;
-        border-color: #1e7e34;
-        color: white;
-      }
-      
-      /* Mobile project card improvements */
-      @media (max-width: 768px) {
-        .project-card {
-          margin-bottom: 15px;
-        }
-        
-        .project-card .resume-wrap {
-          padding: 15px;
-        }
-        
-        .project-card h3 {
-          font-size: 18px;
-        }
-        
-        .project-links a {
-          margin-bottom: 5px;
-          display: inline-block;
-          width: auto;
-          text-align: center;
-        }
-        
-        .project-links .ml-2 {
-          margin-left: 0.5rem !important;
-        }
-        
-        .project-links .mt-2 {
-          margin-top: 0.5rem !important;
-          display: block;
-          width: 100%;
-        }
-      }
-
-      .skill-mf .progress {
-        /* background-color: #cde1f8; */
-        margin: 0.5rem 0 1.2rem;
-        border-radius: 0;
-        height: 0.7rem;
-      }
-
-      .skill-mf .progress .progress-bar {
-        height: 0.7rem;
-        background-color: #ffbd39;
-      }
-
-      /* Animation styles */
-      #typing-animation {
-        position: relative;
-        font-size: 30px;
-        font-weight: bold;
-        color: rgb(255, 255, 255);
-        overflow: hidden;
-        white-space: nowrap;
-        animation: typing 3s steps(20, end) infinite;
-      }
-
-      #typing-animation:before {
-        content: "";
-        /* position: absolute; */
-        top: 0;
-        left: 0;
-        width: 0;
-        height: 100%;
-        background-color: #ccc;
-        animation: typing-cursor 0.5s ease-in-out infinite;
-      }
-
-      @keyframes typing {
-        from {
-          width: 0;
-        }
-
-        to {
-          width: 100%;
-        }
-      }
-
-      @keyframes typing-cursor {
-        from {
-          width: 5px;
-        }
-
-        to {
-          width: 0;
-        }
-      }
-      
-      /* Skills section styling with icons */
-      .skills-container {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 15px;
-        margin-top: 15px;
-      }
-      
-      .skill-category {
-        margin-bottom: 20px;
-        width: 100%;
-      }
-      
-      .skill-category h4 {
-        font-size: 1.1rem;
-        margin-bottom: 15px;
-        color: #ffbd39;
-        font-weight: 600;
-        position: relative;
-        padding-bottom: 8px;
-      }
-      
-      .skill-category h4:after {
-        content: '';
-        position: absolute;
-        left: 0;
-        bottom: 0;
-        width: 50px;
-        height: 2px;
-        background-color: #ffbd39;
-      }
-      
-      .skill-item {
-        display: inline-flex;
-        align-items: center;
-        background-color: rgba(255, 255, 255, 0.1);
-        border-radius: 30px;
-        padding: 8px 15px;
-        margin-right: 10px;
-        margin-bottom: 10px;
-        transition: all 0.3s ease;
-        border: 1px solid rgba(255, 255, 255, 0.1);
-      }
-      
-      .skill-item:hover {
-        transform: translateY(-3px);
-        background-color: rgba(255, 189, 57, 0.1);
-        border-color: #ffbd39;
-      }
-      
-      .skill-item i {
-        margin-right: 8px;
-        font-size: 16px;
-        color: #ffbd39;
-      }
-      
-      .skill-item span {
-        font-size: 14px;
-        font-weight: 500;
-      }
-
-      /* project image zoom effect */
-
-      .zoom-effect {
-        overflow: hidden;
-        transition: transform 0.3s ease-out;
-      }
-
-      .zoom-effect:hover {
-        transform: scale(1.1);
-      }
-
-      @media screen and (orientation: portrait) {
-        body {
-          margin-left: 5%;
-          margin-right: 5%;
-        }
-
-        /* Instead of hiding profile image, make it appear above text on mobile */
-        .order-md-last {
-          visibility: visible;
-          opacity: 0.6;
-          height: 300px !important;
-          position: absolute;
-          width: 100%;
-          top: 0;
-          left: 0;
-          z-index: 1;
-        }
-        
-        /* Move text content below the image */
-        .one-forth {
-          padding-top: 300px !important;
-          z-index: 2 !important;
-          position: relative !important;
-        }
-        
-        /* Make sure text is readable on mobile */
-        #typing-animation {
-          font-size: 24px;
-        }
-
-        .about-img img {
-          content: url("images/about-me.jpg");
-        }
-      }
-      
-      /* Additional mobile improvements */
-      @media (max-width: 768px) {
-        .skill-item {
-          padding: 5px 10px;
-          margin-right: 5px;
-          margin-bottom: 5px;
-        }
-        
-        .skill-item i {
-          margin-right: 5px;
-          font-size: 14px;
-        }
-        
-        .skill-item span {
-          font-size: 12px;
-        }
-        
-        /* Improve buttons on mobile */
-        .btn {
-          padding: 8px 15px !important;
-          font-size: 14px !important;
-        }
-        
-        /* Improve contact section on mobile */
-        .contact-section .box {
-          padding: 15px !important;
-          margin-bottom: 15px !important;
-        }
-        
-        .contact-section .box .icon {
-          width: 70px !important;
-          height: 70px !important;
-          margin-bottom: 15px !important;
-        }
-        
-        .contact-section .box .icon span {
-          font-size: 24px !important;
-        }
-        
-        .contact-section .box h3 {
-          font-size: 16px !important;
-        }
-        
-        /* Fix form on mobile */
-        .contact-section form .btn {
-          width: 100% !important;
-        }
-        
-        /* Fix social icons spacing */
-        .ftco-footer-social li {
-          margin-right: 10px !important;
-        }
-      }
-    </style>
-
-  </head>
-
-  <body data-spy="scroll" data-target=".site-navbar-target" data-offset="300" style="max-width: 100%; overflow-x: hidden;">
-
-    <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar ftco-navbar-light site-navbar-target" id="ftco-navbar">
-      <div class="container">
-        <a class="navbar-brand" href="index.html">Yash Verma</a>
-        <button class="navbar-toggler js-fh5co-nav-toggle fh5co-nav-toggle" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="oi oi-menu"></span>
-          Menu
-        </button>
-
-        <div class="collapse navbar-collapse" id="ftco-nav">
-          <ul class="navbar-nav nav ml-auto">
-            <li class="nav-item">
-              <a href="#home-section" class="nav-link">
-                <span>Home</span></a>
-            </li>
-            <li class="nav-item">
-              <a href="#about-section" class="nav-link">
-                <span>About</span></a>
-            </li>
-            <li class="nav-item">
-              <a href="#resume-section" class="nav-link">
-                <span>Experience</span></a>
-            </li>
-            <li class="nav-item">
-              <a href="#projects-section" class="nav-link">
-                <span>Projects</span></a>
-            </li>
-            <li class="nav-item">
-              <a href="#contact-section" class="nav-link">
-                <span>Contact</span></a>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </nav>
-    <section id="home-section" class="hero">
-      <div class="home-slider  owl-carousel">
-        <div class="slider-item ">
-          <div class="overlay"></div>
-          <div class="container">
-            <div class="row d-md-flex no-gutters slider-text align-items-end justify-content-end" data-scrollax-parent="true">
-              <div class="one-third js-fullheight order-md-last img" style="background-image:url(images/pfp.png); background-size: 90%; background-position: center center;">
-                <div class="overlay"></div>
-              </div>
-              <div class="one-forth d-flex  align-items-center ftco-animate" data-scrollax=" properties: { translateY: '70%' }">
-                <div class="text">
-                  <span class="subheading">Hello!</span>
-                  <h1 class="mb-4 mt-3">I'm
-                    <span>Yash Verma</span></h1>
-
-                  <!-- Element to contain animated typing -->
-                  <span id="typing-animation"></span>
-
-                  <script>
-                    // Initialize the typing animation
-                    const typingAnimationElement = document.getElementById('typing-animation');
-
-                    // Create an array of typing text
-                    const typingTexts = ['Full Stack Developer     ', 'Software Developer     ', 'Photographer & Traveller     '];
-
-                    // Create a function to display the typing animation for a given text
-                    function playTypingAnimation(text) {
-                      // Loop through each character and add it to the element
-                      for (let i = 0; i < text.length; i++) {
-                        setTimeout(() => {
-                          typingAnimationElement.textContent += text[i];
-                        }, i * 100); // Decreased delay to speed up the typing animation
-                      }
-
-                      // Once the animation is complete, reset the text and start over
-                      setTimeout(() => {
-                        typingAnimationElement.textContent = '';
-                        playTypingAnimation(typingTexts[(typingTexts.indexOf(text) + 1) % typingTexts.length]);
-                      }, text.length * 100); // Adjusted delay accordingly
-                    }
-
-                    // Start the typing animation loop
-                    playTypingAnimation(typingTexts[0]);
-                  </script><br><br>
-                  <p>
-                    <a href="https://drive.google.com/file/d/1pkz0Tvgmy7sof--dPhvirjkyzXATTSga/view?usp=sharing" class="btn btn-primary py-3 px-4">Download CV</a>
-                    <a href="https://www.linkedin.com/in/yash-rajput-xv" class="btn btn-white btn-outline-white py-3 px-4">My Linkedin</a>
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="ftco-about img ftco-section ftco-no-pb" id="about-section">
-      <div class="container">
-        <div class="row justify-content-center mb-5 pb-3">
-          <div class="col-md-7 heading-section text-center ftco-animate">
-            <h1 class="big big-2">About Me</h1>
-            <h2 class="mb-4">About Me</h2>
-          </div>
-        </div>
-        
-        <div class="row">
-          <!-- Left Column - About Me Content -->
-          <div class="col-lg-6 col-md-12">
-            <div class="about-content pr-lg-4">
-              <div class="row mb-4">
-                <div class="col-sm-4 col-md-4">
-                  <div class="about-img">
-                    <img src="images/about-me.jpg" class="img-fluid rounded b-shadow-a" alt="image_aboutme">
-                  </div>
-                </div>
-                <div class="col-sm-8 col-md-8">
-                  <div class="about-info">
-                    <p>
-                      <span class="title-s">Name:</span>
-                      <span>Yash Verma</span>
-                    </p>
-                    <p>
-                      <span class="title-s">Job Role:</span>
-                      <span>Full Stack Developer & Software Developer</span>
-                    </p>
-                    <p>
-                      <span class="title-s">Address:</span>
-                      <span>Meerut, Uttar Pradesh</span>
-                    </p>
-                  </div>
-                </div>
-              </div>
-
-              <div class="skills-wrapper">
-              <div class="skills-container">
-                <p class="title-s">Skills</p>
-                
-                <div class="skill-category">
-                  <h4>Languages</h4>
-                  <div class="skill-item">
-                    <i class="fab fa-python"></i>
-                    <span>Python</span>
-                  </div>
-                  <div class="skill-item">
-                    <i class="fab fa-js"></i>
-                    <span>JavaScript</span>
-                  </div>
-                  <div class="skill-item">
-                    <i class="fab fa-java"></i>
-                    <span>Java</span>
-                  </div>
-                  <div class="skill-item">
-                    <i class="fas fa-code"></i>
-                    <span>C++</span>
-                  </div>
-                  <div class="skill-item">
-                    <i class="fab fa-js"></i>
-                    <span>TypeScript</span>
-                  </div>
-                </div>
-                
-                <div class="skill-category">
-                  <h4>Frontend</h4>
-                  <div class="skill-item">
-                    <i class="fab fa-react"></i>
-                    <span>React</span>
-                  </div>
-                  <div class="skill-item">
-                    <i class="fab fa-vuejs"></i>
-                    <span>Vue.js</span>
-                  </div>
-                  <div class="skill-item">
-                    <i class="fab fa-html5"></i>
-                    <span>HTML5</span>
-                  </div>
-                  <div class="skill-item">
-                    <i class="fab fa-css3-alt"></i>
-                    <span>CSS3</span>
-                  </div>
-                  <div class="skill-item">
-                    <i class="fab fa-sass"></i>
-                    <span>SCSS</span>
-                  </div>
-                  <div class="skill-item">
-                    <i class="fab fa-bootstrap"></i>
-                    <span>Bootstrap</span>
-                  </div>
-                  <div class="skill-item">
-                    <i class="fab fa-css3"></i>
-                    <span>TailwindCSS</span>
-                  </div>
-                  <div class="skill-item">
-                    <i class="fab fa-js"></i>
-                    <span>jQuery</span>
-                  </div>
-                </div>
-                
-                <div class="skill-category">
-                  <h4>Backend</h4>
-                  <div class="skill-item">
-                    <i class="fab fa-node-js"></i>
-                    <span>Node.js</span>
-                  </div>
-                  <div class="skill-item">
-                    <i class="fab fa-node-js"></i>
-                    <span>Express.js</span>
-                  </div>
-                  <div class="skill-item">
-                    <i class="fas fa-database"></i>
-                    <span>MongoDB</span>
-                  </div>
-                  <div class="skill-item">
-                    <i class="fas fa-database"></i>
-                    <span>MySQL</span>
-                  </div>
-                  <div class="skill-item">
-                    <i class="fas fa-database"></i>
-                    <span>PostgreSQL</span>
-                  </div>
-                  <div class="skill-item">
-                    <i class="fas fa-key"></i>
-                    <span>JWT</span>
-                  </div>
-                  <div class="skill-item">
-                    <i class="fas fa-file-upload"></i>
-                    <span>Multer</span>
-                  </div>
-                </div>
-                
-                <div class="skill-category">
-                  <h4>Tools & Platforms</h4>
-                  <div class="skill-item">
-                    <i class="fab fa-git-alt"></i>
-                    <span>Git</span>
-                  </div>
-                  <div class="skill-item">
-                    <i class="fab fa-github"></i>
-                    <span>GitHub</span>
-                  </div>
-                  <div class="skill-item">
-                    <i class="fab fa-aws"></i>
-                    <span>AWS</span>
-                  </div>
-                  <div class="skill-item">
-                    <i class="fas fa-server"></i>
-                    <span>Vercel</span>
-                  </div>
-                  <div class="skill-item">
-                    <i class="fas fa-server"></i>
-                    <span>Render</span>
-                  </div>
-                  <div class="skill-item">
-                    <i class="fab fa-docker"></i>
-                    <span>Docker</span>
-                  </div>
-                  <div class="skill-item">
-                    <i class="fas fa-vial"></i>
-                    <span>Vite</span>
-                  </div>
-                  <div class="skill-item">
-                    <i class="fas fa-cloud"></i>
-                    <span>Cloudinary</span>
-                  </div>
-                  <div class="skill-item">
-                    <i class="fas fa-check-circle"></i>
-                    <span>Postman</span>
-                  </div>
-                  <div class="skill-item">
-                    <i class="fas fa-file-alt"></i>
-                    <span>OCR</span>
-                  </div>
-                  <div class="skill-item">
-                    <i class="fas fa-code"></i>
-                    <span>VS Code</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-              
-            </div>
-          </div>
-          
-          <!-- Right Column - Skills -->
-          <div class="col-lg-6 col-md-12">
-            <div class="about-text">
-                <p>I am a skilled Full Stack developer with a strong foundation in programming languages, including C++, Python, Java, and JavaScript. I have experience in collaborative open-source environments, which has enhanced my teamwork and technical abilities.</p>
-                
-                <p>My goal is to develop high-quality, scalable software applications that improve user satisfaction and drive business outcomes. Currently, I am expanding my expertise in DevOps practices for efficient software delivery. I am eager to contribute to an innovative organization that values collaboration and continuous growth.</p>
-                
-                <p>Outside of my technical interests, I enjoy traveling and photography, which inspire my creativity.</p>
-              </div>
-              
-              <ul class="about-info mt-4 px-md-0 px-2">
-                <li class="d-flex">
-                  <span>Profile:</span>
-                  <span>Full Stack Developer &amp; Photographer</span>
-                </li>
-                <li class="d-flex">
-                  <span>Domain:</span>
-                  <span>Software Developement</span>
-                </li>
-                <li class="d-flex">
-                  <span>Education:</span>
-                  <span>Bachelor of Technology - Computer Science and Engineering</span>
-                </li>
-                <li class="d-flex">
-                  <span>Language:</span>
-                  <span>English, Hindi</span>
-                </li>
-                <li class="d-flex">
-                  <span>Other Skills:</span>
-                  <span>Observational skills, Creativity, Knowledge of Networking fundamentals, Technical proficiency, Communication skills, Time management, Adaptability &amp; Attention to detail</span>
-                </li>
-                <li class="d-flex">
-                  <span>Interest:</span>
-                  <span>Traveling, Travel Photography, Teaching, Editing</span>
-                </li>
-              </ul>
-
-              <div class="row mt-4">
-          <div class="col-12">
-            <div class="counter-wrap ftco-animate d-flex">
-              <div class="text text-center w-100">
-                <p>
-                  <a href="https://www.linkedin.com/in/yash-rajput-xv" class="btn btn-primary py-3 px-3 mr-2">LinkedIn</a>
-                  <a href="https://www.github.com/Rajput-xv" class="btn btn-white btn-outline-white py-3 px-3">GitHub</a>
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-          </div>
-        </div>
-        
-        
-      </div>
-    </section>
-    </section>
-
-    <section class="ftco-section ftco-no-pb" id="resume-section">
-      <div class="container">
-
-        <div class="row mb-4">
-          <h1 class="big-4 mb-2">My Professional Journey</h1>
-          <div class="underline"></div>
-        </div>
-
-        <div class="row">
-
-            <div class="col-md-6">
-            <div class="resume-wrap ftco-animate">
-              <span class="date">September 2025 - November 2025</span>
-              <h2>ReactJS Developer Intern</h2>
-              <span class="position">Qureal AI</span>
-              <div class="experience-content">
-                <p class="mt-4">
-                  <ul>
-                    <li>Developed full-stack React admin portal and managing e-commerce operations, vendors and documents for client handover.</li>
-                    <li>Built member portal enabling user registrations, profile management, and document verification for organizational use.</li>
-                    <li>Integrated RESTful APIs with Axios & React Query for efficient data fetching & state management across 20+ components in portals.</li>
-                  </ul>
-                </p>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-md-6">
-            <div class="resume-wrap ftco-animate">
-              <span class="date">June 2025 - September 2025</span>
-              <h2>Web Development Intern</h2>
-              <span class="position">Rekniq Consultants</span>
-              <div class="experience-content">
-                <p class="mt-4">
-                  <ul>
-                    <li>Developed Vision E Academy educational website from scratch using Google Sites, implementing responsive design and user friendly navigation architecture.</li>
-                    <li>Enhanced Odoo-based e-commerce platform frontend with improved UI responsiveness, streamlined checkout process, and optimized product browsing functionality.</li>
-                    <li>Redesigned website modules using modern UI/UX standards and integrated interactive animations to increase customer engagement and user experience.</li>
-                    <li>Built dedicated content management section for company articles and updates, strengthening digital presence and implementing SEO-optimized content strategy.</li>
-                  </ul>
-                </p>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-md-6">
-            <div class="resume-wrap ftco-animate">
-              <span class="date">May 2024 - August 2024 & October 2024 - November 2024</span>
-              <h2>Open-Source Contributor</h2>
-              <span class="position">Girl Script Summer of Code</span>
-              <div class="experience-content">
-                <p class="mt-4">
-                  <ul>
-                    <li>A 3-month competitive coding program where I ranked 304th among 27,000+ developers.</li>
-                    <li>Enhanced the project by implementing responsive dashboard components that reduced page load times by 30%, receiving commendation from the project maintainer.</li>
-                    <li>Collaborated with a team of developers to redesign the user onboarding flow, which increased new user retention by 40%.</li>
-                  </ul>
-                </p>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-md-6">
-            <div class="resume-wrap ftco-animate">
-              <span class="date">December 2024 - January 2025</span>
-              <h2>Space Tech Intern</h2>
-              <span class="position">India Space Lab</span>
-              <div class="experience-content">
-                <p class="mt-4">
-                  <ul>
-                    <li><strong>Advanced Drone Technology (Air Taxi):</strong> Gained hands-on experience in advanced drone technologies, focusing on air taxi innovations and applications.</li>
-                  <li><strong>CanSat and CubeSat (Student Satellite):</strong> Participated in a comprehensive workshop on CanSat and CubeSat design, development, and deployment.</li>
-                  <li><strong>Astronomy Training Program:</strong> Completed an intensive training program covering key concepts in astronomy, including celestial navigation and observational techniques.</li>
-                  <li><strong>Space Entrepreneurship Sessions:</strong> Engaged in sessions aimed at fostering entrepreneurial skills within the space sector, including business model development and funding strategies.</li>
-                  </ul>
-                </p>
-              </div>
-            </div>
-          </div>
-
-
-          <!-- ADD more here in future -->
-
-        </div>
-
-        <br>
-        <br>
-
-        <div class="row">
-          <h1 class="big-4">Education</h1>
-          <div class="underline"></div>
-        </div>
-        <br>
-
-        <div class="row">
-          <div class="col-md-6">
-            <div class="resume-wrap ftco-animate">
-              <span class="date">2022-2024</span>
-              <h2>Bachelor of Technology Computer Science and Engineering</h2>
-              <span class="position">Vellore Institute of Technology, Bhopal</span>
-              <div class="experience-content">
-                <p class="mt-4">
-                  <ul>
-                    <li>CGPA: 8.79</li>
-                    <li><strong>Relevant Coursework:</strong> Object-Oriented Programming, Database Management Systems, Data Structures and Algorithms, Operating Systems, Computer Networks, Machine Learning, Artificial Intelligence, Theory of Computation, Software Engineering, Design and Analysis ofAlgorithms</li>
-                  </ul>
-                </p>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-md-6">
-            <div class="resume-wrap ftco-animate">
-              <span class="date">2020-2021</span>
-              <h2>Higher Secondary School</h2>
-              <span class="position">Kendriya Vidyalaya, Punjab Lines, Meerut Cantt</span>
-              <div class="experience-content">
-                <p class="mt-4">
-                  <ul>
-                    <li>Percentage: 94.8%</li>
-                    <li>Board: CBSE</li>
-                    <li>Subjects: Physics, Chemistry, Mathematics, Computer Science, English</li>
-                  </ul>
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-
-      </div>
-    </section>
     
-    <!-- Projects Section -->
-    <section class="ftco-section" id="projects-section">
-      <div class="container">
-        <div class="row justify-content-center mb-5 pb-3">
-          <div class="col-md-7 heading-section text-center ftco-animate">
-            <h1 class="big big-2">Projects</h1>
-            <h2 class="mb-4">My Projects</h2>
-            <p>Here are some of my notable projects that demonstrate my technical skills and problem solving abilities.</p>
-          </div>
-        </div>
-        
-        <div class="row">
-          
-          <div class="col-md-4 mb-4 project-card">
-            <div class="resume-wrap ftco-animate">
-              <h3>Health Report Analyzer</h3>
-              <p class="project-overview">A medical report analysis tool that extracts data from lab reports and presents it in organized tables with trend analysis.</p>
-              <div class="project-content">
-                <div class="project-description">
-                  <ul class="mt-2">
-                    <li>Automated extraction of medical data from PDF/image lab reports</li>
-                    <li>Implemented secure JWT authentication for user data protection</li>
-                    <li>Created visualization tools for tracking health metrics over time</li>
-                  </ul>
-                </div>
-              </div>
-              <div class="project-links">
-                <a href="https://github.com/Rajput-xv/Health-Report-Analyzer" class="btn btn-primary py-2 px-3" target="_blank">View Project</a>
-                <a href="https://health-report-analyzer.vercel.app/" class="btn btn-demo py-2 px-3 ml-2" target="_blank">Live Demo</a>
-              </div>
-            </div>
-          </div>
-          
-          <div class="col-md-4 mb-4 project-card">
-            <div class="resume-wrap ftco-animate">
-              <h3>Crisis Nexus</h3>
-              <p class="project-overview">A comprehensive disaster management platform designed to enhance community resilience and coordinate relief efforts.</p>
-              <div class="project-content">
-                <div class="project-description">
-                  <ul class="mt-2">
-                    <li>Implemented real-time incident reporting with location-based mapping</li>
-                    <li>Built hospital finder system with route calculation and directions</li>
-                    <li>Created resource management system for tracking community resources</li>
-                  </ul>
-                </div>
-              </div>
-              <div class="project-links">
-                <a href="https://github.com/Rajput-xv/Crisis-nexus-frontend" class="btn btn-primary py-2 px-3" target="_blank">Frontend</a>
-                <a href="https://github.com/Rajput-xv/Crisis-Nexus-server" class="btn btn-white btn-outline-primary py-2 px-3" target="_blank">Backend</a>
-                <a href="https://crisis-nexus.vercel.app/" class="btn btn-demo py-2 px-3 mt-2" target="_blank">Live Demo</a>
-              </div>
-            </div>
-          </div>
-          
-          <div class="col-md-4 mb-4 project-card">
-            <div class="resume-wrap ftco-animate">
-              <h3>Indian Bazaar</h3>
-              <p class="project-overview">A full-stack marketplace connecting street food vendors with raw material suppliers in India.</p>
-              <div class="project-content">
-                <div class="project-description">
-                  <ul class="mt-2">
-                    <li>Implemented JWT-based authentication with role-based access control</li>
-                    <li>Created dual user roles with vendor and supplier dashboards</li>
-                    <li>Built location-based services for discovering nearby suppliers</li>
-                  </ul>
-                </div>
-              </div>
-              <div class="project-links">
-                <a href="https://github.com/Rajput-xv/indian-bazaar" class="btn btn-primary py-2 px-3" target="_blank">View Project</a>
-                <a href="https://indian-bazaar.vercel.app/" class="btn btn-demo py-2 px-3 ml-2" target="_blank">Live Demo</a>
-              </div>
-            </div>
-          </div>
-          
-          <div class="col-md-4 mb-4 project-card">
-            <div class="resume-wrap ftco-animate">
-              <h3>Auction System</h3>
-              <p class="project-overview">A full-stack auction application where users can create, bid on, and manage auction items in real-time.</p>
-              <div class="project-content">
-                <div class="project-description">
-                  <ul class="mt-2">
-                    <li>Built secure authentication system with JWT tokens</li>
-                    <li>Implemented real-time bidding functionality for active auctions</li>
-                    <li>Created comprehensive auction management system</li>
-                  </ul>
-                </div>
-              </div>
-              <div class="project-links">
-                <a href="https://github.com/Rajput-xv/Auction" class="btn btn-primary py-2 px-3" target="_blank">View Project</a>
-                <a href="https://auction-lac.vercel.app" target="_blank" class="btn btn-demo py-2 px-3 ml-2">Live Demo</a>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-md-4 mb-4 project-card">
-            <div class="resume-wrap ftco-animate">
-              <h3>SynapseQ - Q&A Platform</h3>
-              <p class="project-overview">A comprehensive question-and-answer platform built during ODOO Hackathon that allows users to ask questions, provide answers, and build community knowledge.</p>
-              <div class="project-content">
-                <div class="project-description">
-                  <ul class="mt-2">
-                    <li>Implemented user authentication with JWT for secure login and registration</li>
-                    <li>Created voting system for questions and answers with reputation tracking</li>
-                    <li>Built tagging system for categorizing questions with smart filtering</li>
-                  </ul>
-                </div>
-              </div>
-              <div class="project-links">
-                <a href="https://github.com/Aksh202004/ODOO-hackthon" class="btn btn-primary py-2 px-3" target="_blank">View Project</a>
-                <!-- <a href="https://synapseq-demo.vercel.app" class="btn btn-demo py-2 px-3 ml-2">Live Demo</a> -->
-              </div>
-            </div>
-          </div>
-          
-          <div class="col-md-4 mb-4 project-card">
-            <div class="resume-wrap ftco-animate">
-              <h3>Auto-Fill Assistant</h3>
-              <p class="project-overview">A Chrome extension that automatically saves and fills form data across any website.</p>
-              <div class="project-content">
-                <div class="project-description">
-                  <ul class="mt-2">
-                    <li>Implemented smart field matching using labels and context</li>
-                    <li>Created intelligent grouping for similar field types</li>
-                    <li>Built privacy-focused local storage system for user data</li>
-                  </ul>
-                </div>
-              </div>
-              <div class="project-links">
-                <a href="https://github.com/Rajput-xv/Auto-Fill" class="btn btn-primary py-2 px-3" target="_blank">View Project</a>
-                <!-- <a href="https://chrome.google.com/webstore/detail/auto-fill-assistant/hfkpnchbmggecheaafldkpnpgnlnhcma" class="btn btn-demo py-2 px-3 ml-2">Chrome Store</a> -->
-              </div>
-            </div>
-          </div>
-          
-          <div class="col-md-4 mb-4 project-card">
-            <div class="resume-wrap ftco-animate">
-              <h3>Ratings and Review System</h3>
-              <p class="project-overview">A modern web application where users can rate and review products with photo uploads and smart tag generation.</p>
-              <div class="project-content">
-                <div class="project-description">
-                  <ul class="mt-2">
-                    <li>Implemented cloud-based image storage with automatic compression</li>
-                    <li>Created star rating system with detailed review capabilities</li>
-                    <li>Built custom tagging system for categorizing reviews</li>
-                  </ul>
-                </div>
-              </div>
-              <div class="project-links">
-                <a href="https://github.com/Rajput-xv/Ratings-and-Review-System" class="btn btn-primary py-2 px-3" target="_blank">View Project</a>
-                <a href="https://ratings-and-review-system-two.vercel.app/" class="btn btn-demo py-2 px-3 ml-2" target="_blank">Live Demo</a>
-              </div>
-            </div>
-          </div>
-          
-          <div class="col-md-4 mb-4 project-card">
-            <div class="resume-wrap ftco-animate">
-              <h3>Bitespeed Identity</h3>
-              <p class="project-overview">A service to track customer identities across multiple purchases and contact methods.</p>
-              <div class="project-content">
-                <div class="project-description">
-                  <ul class="mt-2">
-                    <li>Implemented identity consolidation across email and phone number</li>
-                    <li>Created primary/secondary contact linking system</li>
-                    <li>Built RESTful API with identity identification endpoint</li>
-                  </ul>
-                </div>
-              </div>
-              <div class="project-links">
-                <a href="https://github.com/Rajput-xv/Bitespeed-identity" class="btn btn-primary py-2 px-3" target="_blank">View Project</a>
-                <!-- <a href="https://bitespeed-identity.onrender.com" class="btn btn-demo py-2 px-3 ml-2">Live Demo</a> -->
-              </div>
-            </div>
-          </div>
-          
-          <div class="col-md-4 mb-4 project-card">
-            <div class="resume-wrap ftco-animate">
-              <h3>Crypto Tracker</h3>
-              <p class="project-overview">A cryptocurrency tracking application that helps users monitor prices and market trends.</p>
-              <div class="project-content">
-                <div class="project-description">
-                  <ul class="mt-2">
-                    <li>Integrated with cryptocurrency APIs for real-time data</li>
-                    <li>Built price trend visualization tools with chart libraries</li>
-                    <li>Implemented market prediction functionality using Python</li>
-                  </ul>
-                </div>
-              </div>
-              <div class="project-links">
-                <a href="https://github.com/Rajput-xv/crypto-tracker-y" class="btn btn-primary py-2 px-3" target="_blank">View Project</a>
-                <!-- <a href="https://crypto-tracker-yash.vercel.app" class="btn btn-demo py-2 px-3 ml-2">Live Demo</a> -->
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="ftco-section ftco-no-pt ftco-no-pb ftco-counter img" id="section-counter">
-      <!-- <div class="hid" style="visibility:hidden">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
         <div class="container">
-          <div class="row d-md-flex align-items-center">
-            <div class="col-md d-flex justify-content-center counter-wrap ftco-animate">
-              <div class="block-18">
-                <div class="text">
-                  <strong class="number" data-number="15">0</strong>
-                  <span>Achievements</span>
-                </div>
-              </div>
+            <a href="#home" class="logo">Yash<span>.dev</span></a>
+            <div class="nav-menu" id="navMenu">
+                <a href="#home" class="nav-link">Home</a>
+                <a href="#about" class="nav-link">About</a>
+                <a href="#experience" class="nav-link">Experience</a>
+                <a href="#projects" class="nav-link">Projects</a>
+                <a href="#contact" class="nav-link">Contact</a>
             </div>
-
-            <div class="col-md d-flex justify-content-center counter-wrap ftco-animate">
-              <div class="block-18">
-                <div class="text">
-                  <strong class="number" data-number="10">0</strong>
-                  <span>Websites</span>
-                </div>
-              </div>
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
             </div>
-
-          </div>
         </div>
-      </div> -->
+    </nav>
 
-      <div class="ftco-section ftco-hireme img margin-top" style="background-image: url(images/bg_1.jpg)">
-        <!-- <div class="container"> -->
-        <div class="row justify-content-center">
-          <div class="col-md-7 ftco-animate text-center">
-            <h2>Here's my<span>
-                <button id="gitbtn" class="btn btn-primary py-2 px-3" onclick="gitClick()">GitHub</button>
-              </span>
-            </h2>
-            <div class="heading">
-              <h4>
-                Code your dreams, Compile your success.
-              </h4>
-              <br>
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-particles"></div>
+        <div class="container hero-content">
+            <div class="hero-text">
+                <div class="greeting">👋 Hello, I'm</div>
+                <h1 class="hero-title">Yash Verma</h1>
+                <div class="hero-subtitle">
+                    <span class="typing-text"></span>
+                    <span class="cursor">|</span>
+                </div>
+                <p class="hero-description">
+                    Passionate Full Stack Developer crafting elegant solutions to complex problems. 
+                    Specializing in building exceptional digital experiences with modern technologies.
+                </p>
+                <div class="hero-buttons">
+                    <a href="#projects" class="btn btn-primary">View My Work</a>
+                    <a href="#contact" class="btn btn-outline">Get In Touch</a>
+                </div>
+                <div class="social-links">
+                    <a href="https://github.com/Rajput-xv" target="_blank" class="social-icon">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/in/yash-rajput-xv" target="_blank" class="social-icon">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                    <a href="https://x.com/rajput_xv" target="_blank" class="social-icon">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    <a href="https://www.instagram.com/rajput_xv" target="_blank" class="social-icon">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                </div>
             </div>
-          </div>
+            <div class="hero-image">
+                <div class="image-wrapper">
+                    <img src="images/pfp.png" alt="Yash Verma">
+                    <div class="image-glow"></div>
+                </div>
+            </div>
         </div>
-        <!-- </div> -->
-      </div>
+        <div class="scroll-indicator">
+            <span>Scroll Down</span>
+            <i class="fas fa-arrow-down"></i>
+        </div>
     </section>
 
-    <section class="ftco-section contact-section ftco-no-pb" id="contact-section">
-      <div class="container">
-        <div class="row justify-content-center mb-5 pb-3">
-          <div class="col-md-7 heading-section text-center ftco-animate">
-            <h1 class="big big-2">Contact</h1>
-            <h2 class="mb-4">Contact Me</h2>
-            <p>Below are the details to reach out to me!</p>
-          </div>
-        </div>
-
-        <div class="row d-flex contact-info mb-5">
-          <div class="col-md-6 col-lg-3 d-flex ftco-animate">
-            <div class="align-self-stretch box p-4 text-center">
-              <div class="icon d-flex align-items-center justify-content-center">
-                <span class="icon-map-signs"></span>
-              </div>
-              <h3 class="mb-4">Address</h3>
-              <p>Meerut, Uttar Pradesh, India</p>
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Get To Know</span>
+                <h2 class="section-title">About Me</h2>
             </div>
-          </div>
-          <div class="col-md-6 col-lg-3 d-flex ftco-animate">
-            <div class="align-self-stretch box p-4 text-center">
-              <div class="icon d-flex align-items-center justify-content-center">
-                <span class="icon-phone2"></span>
-              </div>
-              <h3 class="mb-4">Contact Number</h3>
-              <p>
-                <a href="tel://9759277024">+91 975-927-7024</a>
-              </p>
-            </div>
-          </div>
-          <div class="col-md-6 col-lg-3 d-flex ftco-animate">
-            <div class="align-self-stretch box p-4 text-center">
-              <div class="icon d-flex align-items-center justify-content-center">
-                <span class="icon-paper-plane"></span>
-              </div>
-              <h3 class="mb-4">Email Address</h3>
-              <p>
-                <a href="mailto:yash44365@gmail.com">yash44365@gmail.com</a>
-              </p>
-            </div>
-          </div>
-          <div class="col-md-6 col-lg-3 d-flex ftco-animate">
-            <div class="align-self-stretch box p-4 text-center">
-              <div class="icon d-flex align-items-center justify-content-center">
-                <span class="icon-globe"></span>
-              </div>
-              <h3 class="mb-4">Download Resume</h3>
-              <p>
-                <a href="https://drive.google.com/file/d/1pkz0Tvgmy7sof--dPhvirjkyzXATTSga/view?usp=sharing">Resume link</a>
-              </p>
-            </div>
-          </div>
-
-          <div class="container">
-            <br>
-            <br>
-            <div class="row justify-content-center">
-              <div class="col-md-7 ftco-animate text-center">
-                <h2>Have a<span>
-                    Question?
-                  </span>
-                </h2>
-                <div class="que" id="send-message">
-                  <form action="https://api.web3forms.com/submit" method="POST" aria-label="Contact form">
-                    <input type="hidden" name="access_key" value="1062bbfa-af4d-48d3-985b-56511cfb073d">
-                    <input type="hidden" name="redirect" value="https://web3forms.com/success">
-                    <input type="hidden" name="subject" value="New Contact Form Submission from Portfolio">
-                    <input type="checkbox" name="botcheck" class="d-none" style="display: none;">
-                    <div class="row gy-4 gy-xl-5 p-4 p-xl-5">
-                      <div class="col-12">
-                        <label for="fullname" class="form-label">Full Name
-                          <span class="text-danger">*</span></label>
-                        <input type="text" class="form-control" id="fullname" name="fullname" value="" required="required">
-                      </div>
-                      <div class="col-12 col-md-6">
-                        <label for="email" class="form-label">Email
-                          <span class="text-danger">*</span></label>
-                        <div class="input-group">
-                          <span class="input-group-text">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-envelope" viewbox="0 0 16 16">
-                              <path d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V4Zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1H2Zm13 2.383-4.708 2.825L15 11.105V5.383Zm-.034 6.876-5.64-3.471L8 9.583l-1.326-.795-5.64 3.47A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.741ZM1 11.105l4.708-2.897L1 5.383v5.722Z"/>
-                            </svg>
-                          </span>
-                          <input type="email" class="form-control" id="email" name="email" value="" required="required">
-                        </div>
-                      </div>
-                      <div class="col-12 col-md-6">
-                        <label for="phone" class="form-label">Phone Number</label>
-                        <div class="input-group">
-                          <span class="input-group-text">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-telephone" viewbox="0 0 16 16">
-                              <path d="M3.654 1.328a.678.678 0 0 0-1.015-.063L1.605 2.3c-.483.484-.661 1.169-.45 1.77a17.568 17.568 0 0 0 4.168 6.608 17.569 17.569 0 0 0 6.608 4.168c.601.211 1.286.033 1.77-.45l1.034-1.034a.678.678 0 0 0-.063-1.015l-2.307-1.794a.678.678 0 0 0-.58-.122l-2.19.547a1.745 1.745 0 0 1-1.657-.459L5.482 8.062a1.745 1.745 0 0 1-.46-1.657l.548-2.19a.678.678 0 0 0-.122-.58L3.654 1.328zM1.884.511a1.745 1.745 0 0 1 2.612.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.678.678 0 0 0 .178.643l2.457 2.457a.678.678 0 0 0 .644.178l2.189-.547a1.745 1.745 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.634 18.634 0 0 1-7.01-4.42 18.634 18.634 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877L1.885.511z"/>
-                            </svg>
-                          </span>
-                          <input type="tel" class="form-control" id="phone" name="phone" value="">
-                        </div>
-                      </div><br>
-                      <div class="col-12">
-                        <label for="subject" class="form-label">Subject
-                          <span class="text-danger">*</span></label>
-                        <input type="text" class="form-control" id="subject" name="subject" value="" required="required">
-                      </div>
-                      <div class="col-12">
-                        <label for="message" class="form-label">Message
-                          <span class="text-danger">*</span></label>
-                        <textarea class="form-control" id="message" name="message" rows="3" required="required"></textarea>
-                      </div>
-                      <div class="col-12">
-                        <div class="form-check">
-                          <input class="form-check-input" type="checkbox" value="" id="privacy" name="privacy" required>
-                          <label class="form-check-label" for="privacy">
-                            I agree with the <a href="#" class="text-primary">Privacy Policy</a>
-                          </label>
-                        </div>
-                      </div>
-                      <div class="col-12">
-                        <div class="d-grid"><br>
-                          <button class="btn btn-primary btn-lg w-100" type="submit">Send Message</button>
-                        </div>
-                      </div>
+            
+            <div class="about-content">
+                <div class="about-image">
+                    <img src="images/about-me.jpg" alt="Yash Verma">
+                    <div class="about-image-bg"></div>
+                </div>
+                
+                <div class="about-text">
+                    <div class="about-description">
+                        <p>
+                            I am a skilled Full Stack developer with a strong foundation in programming languages, 
+                            including <strong>C++, Python, Java, and JavaScript</strong>. I have experience in 
+                            collaborative open-source environments, which has enhanced my teamwork and technical abilities.
+                        </p>
+                        <p>
+                            My goal is to develop high-quality, scalable software applications that improve user 
+                            satisfaction and drive business outcomes. Currently, I am expanding my expertise in 
+                            <strong>DevOps practices</strong> for efficient software delivery.
+                        </p>
+                        <p>
+                            Outside of my technical interests, I enjoy <strong>traveling and photography</strong>, 
+                            which inspire my creativity.
+                        </p>
                     </div>
-                  </form>
+                    
+                    <div class="about-info">
+                        <div class="info-item">
+                            <i class="fas fa-user"></i>
+                            <div>
+                                <span class="info-label">Name</span>
+                                <span class="info-value">Yash Verma</span>
+                            </div>
+                        </div>
+                        <div class="info-item">
+                            <i class="fas fa-briefcase"></i>
+                            <div>
+                                <span class="info-label">Role</span>
+                                <span class="info-value">Full Stack Developer</span>
+                            </div>
+                        </div>
+                        <div class="info-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <div>
+                                <span class="info-label">Location</span>
+                                <span class="info-value">Meerut, Uttar Pradesh</span>
+                            </div>
+                        </div>
+                        <div class="info-item">
+                            <i class="fas fa-graduation-cap"></i>
+                            <div>
+                                <span class="info-label">Education</span>
+                                <span class="info-value">B.Tech in Computer Science</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="about-actions">
+                        <a href="https://drive.google.com/file/d/1pkz0Tvgmy7sof--dPhvirjkyzXATTSga/view?usp=sharing" 
+                           target="_blank" class="btn btn-primary">
+                            <i class="fas fa-download"></i> Download CV
+                        </a>
+                    </div>
                 </div>
-              </div>
             </div>
-            <br>
-            <ul class="ftco-footer-social list-unstyled d-flex justify-content-center align-items-center mb-0">
-              <li class="ftco-animate normal-txt">Find me on
-              </li>
-              <li class="ftco-animate">
-                <a href="https://www.linkedin.com/in/yash-rajput-xv">
-                  <span class="icon-linkedin"></span></a>
-              </li>
-              <li class="ftco-animate">
-                <a href="https://x.com/rajput_xv">
-                  <span class="icon-twitter"></span></a>
-              </li>
-              <!-- <li class="ftco-animate"> <a href="https://twitter.com/rishabhnmishra"> <span class="icon-facebook"></span></a> </li> -->
-              <li class="ftco-animate">
-                <a href="https://www.instagram.com/rajput_xv">
-                  <span class="icon-instagram"></span></a>
-              </li>
-            </ul>
-            <br>
-          </div>
         </div>
-      </section>
+    </section>
 
-      <footer class="ftco-footer ftco-section">
+    <!-- Skills Section -->
+    <section id="skills" class="skills">
         <div class="container">
-          <div class="row">
-            <div class="col-md-12 text-center">
-
-              <p>
-                <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-                Copyright &copy;<script>
-                  document.write(new Date().getFullYear());
-                </script>
-                All rights reserved | <!-- This is made with
-                <i class="icon-heart color-danger" aria-hidden="true"></i>
-                by -->
-                <a href="/" target="_blank">Yash Verma</a>
-                <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-              </p>
+            <div class="section-header">
+                <span class="section-tag">What I Know</span>
+                <h2 class="section-title">Skills & Technologies</h2>
             </div>
-          </div>
+            
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <div class="category-header">
+                        <i class="fas fa-code"></i>
+                        <h3>Languages</h3>
+                    </div>
+                    <div class="skill-tags">
+                        <span class="skill-tag"><i class="fab fa-python"></i> Python</span>
+                        <span class="skill-tag"><i class="fab fa-js"></i> JavaScript</span>
+                        <span class="skill-tag"><i class="fab fa-java"></i> Java</span>
+                        <span class="skill-tag"><i class="fas fa-code"></i> C++</span>
+                        <span class="skill-tag"><i class="fab fa-js"></i> TypeScript</span>
+                    </div>
+                </div>
+                
+                <div class="skill-category">
+                    <div class="category-header">
+                        <i class="fas fa-paint-brush"></i>
+                        <h3>Frontend</h3>
+                    </div>
+                    <div class="skill-tags">
+                        <span class="skill-tag"><i class="fab fa-react"></i> React</span>
+                        <span class="skill-tag"><i class="fab fa-vuejs"></i> Vue.js</span>
+                        <span class="skill-tag"><i class="fab fa-html5"></i> HTML5</span>
+                        <span class="skill-tag"><i class="fab fa-css3-alt"></i> CSS3</span>
+                        <span class="skill-tag"><i class="fab fa-sass"></i> SCSS</span>
+                        <span class="skill-tag"><i class="fab fa-bootstrap"></i> Bootstrap</span>
+                        <span class="skill-tag"><i class="fas fa-wind"></i> TailwindCSS</span>
+                        <span class="skill-tag"><i class="fab fa-js"></i> jQuery</span>
+                    </div>
+                </div>
+                
+                <div class="skill-category">
+                    <div class="category-header">
+                        <i class="fas fa-server"></i>
+                        <h3>Backend</h3>
+                    </div>
+                    <div class="skill-tags">
+                        <span class="skill-tag"><i class="fab fa-node-js"></i> Node.js</span>
+                        <span class="skill-tag"><i class="fas fa-cube"></i> Express.js</span>
+                        <span class="skill-tag"><i class="fas fa-database"></i> MongoDB</span>
+                        <span class="skill-tag"><i class="fas fa-database"></i> MySQL</span>
+                        <span class="skill-tag"><i class="fas fa-database"></i> PostgreSQL</span>
+                        <span class="skill-tag"><i class="fas fa-key"></i> JWT</span>
+                        <span class="skill-tag"><i class="fas fa-file-upload"></i> Multer</span>
+                    </div>
+                </div>
+                
+                <div class="skill-category">
+                    <div class="category-header">
+                        <i class="fas fa-tools"></i>
+                        <h3>Tools & Platforms</h3>
+                    </div>
+                    <div class="skill-tags">
+                        <span class="skill-tag"><i class="fab fa-git-alt"></i> Git</span>
+                        <span class="skill-tag"><i class="fab fa-github"></i> GitHub</span>
+                        <span class="skill-tag"><i class="fab fa-aws"></i> AWS</span>
+                        <span class="skill-tag"><i class="fas fa-cloud"></i> Vercel</span>
+                        <span class="skill-tag"><i class="fas fa-server"></i> Render</span>
+                        <span class="skill-tag"><i class="fab fa-docker"></i> Docker</span>
+                        <span class="skill-tag"><i class="fas fa-bolt"></i> Vite</span>
+                        <span class="skill-tag"><i class="fas fa-cloud"></i> Cloudinary</span>
+                        <span class="skill-tag"><i class="fas fa-check"></i> Postman</span>
+                        <span class="skill-tag"><i class="fas fa-code"></i> VS Code</span>
+                    </div>
+                </div>
+            </div>
         </div>
-      </footer>
+    </section>
 
-      <!-- loader -->
-      <div id="ftco-loader" class="show fullscreen">
-        <svg class="circular" width="48px" height="48px">
-          <circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/>
-          <circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00"/></svg>
-      </div>
+    <!-- Experience Section -->
+    <section id="experience" class="experience">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">My Journey</span>
+                <h2 class="section-title">Work Experience</h2>
+            </div>
+            
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <span class="timeline-date">September 2025 - November 2025</span>
+                        <h3>ReactJS Developer Intern</h3>
+                        <h4>Qureal AI</h4>
+                        <ul>
+                            <li>Developed full-stack React admin portal managing e-commerce operations, vendors and documents for client handover.</li>
+                            <li>Built member portal enabling user registrations, profile management, and document verification for organizational use.</li>
+                            <li>Integrated RESTful APIs with Axios & React Query for efficient data fetching & state management across 20+ components.</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <span class="timeline-date">June 2025 - September 2025</span>
+                        <h3>Web Development Intern</h3>
+                        <h4>Rekniq Consultants</h4>
+                        <ul>
+                            <li>Developed Vision E Academy educational website from scratch using Google Sites with responsive design.</li>
+                            <li>Enhanced Odoo-based e-commerce platform frontend with improved UI responsiveness and streamlined checkout process.</li>
+                            <li>Redesigned website modules using modern UI/UX standards with interactive animations.</li>
+                            <li>Built dedicated content management section strengthening digital presence with SEO-optimized strategy.</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <span class="timeline-date">May 2024 - August 2024 & October 2024 - November 2024</span>
+                        <h3>Open-Source Contributor</h3>
+                        <h4>Girl Script Summer of Code</h4>
+                        <ul>
+                            <li>Ranked 304th among 27,000+ developers in this 3-month competitive coding program.</li>
+                            <li>Enhanced projects by implementing responsive dashboard components that reduced page load times by 30%.</li>
+                            <li>Collaborated with developers to redesign user onboarding flow, increasing new user retention by 40%.</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <span class="timeline-date">December 2024 - January 2025</span>
+                        <h3>Space Tech Intern</h3>
+                        <h4>India Space Lab</h4>
+                        <ul>
+                            <li>Gained hands-on experience in advanced drone technologies, focusing on air taxi innovations.</li>
+                            <li>Participated in comprehensive workshop on CanSat and CubeSat design, development, and deployment.</li>
+                            <li>Completed intensive training program covering key concepts in astronomy and celestial navigation.</li>
+                            <li>Engaged in space entrepreneurship sessions including business model development and funding strategies.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Education -->
+            <div class="section-header mt-5">
+                <span class="section-tag">Academic Background</span>
+                <h2 class="section-title">Education</h2>
+            </div>
+            
+            <div class="education-grid">
+                <div class="education-card">
+                    <div class="education-icon">
+                        <i class="fas fa-university"></i>
+                    </div>
+                    <span class="education-date">2022 - 2024</span>
+                    <h3>Bachelor of Technology</h3>
+                    <h4>Computer Science and Engineering</h4>
+                    <p class="education-school">Vellore Institute of Technology, Bhopal</p>
+                    <div class="education-details">
+                        <p><strong>CGPA:</strong> 8.79</p>
+                        <p><strong>Coursework:</strong> OOP, DBMS, DSA, OS, Computer Networks, ML, AI, TOC, Software Engineering, DAA</p>
+                    </div>
+                </div>
+                
+                <div class="education-card">
+                    <div class="education-icon">
+                        <i class="fas fa-school"></i>
+                    </div>
+                    <span class="education-date">2020 - 2021</span>
+                    <h3>Higher Secondary School</h3>
+                    <h4>CBSE Board</h4>
+                    <p class="education-school">Kendriya Vidyalaya, Punjab Lines, Meerut Cantt</p>
+                    <div class="education-details">
+                        <p><strong>Percentage:</strong> 94.8%</p>
+                        <p><strong>Subjects:</strong> Physics, Chemistry, Mathematics, Computer Science, English</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-      <script src="js/jquery.min.js"></script>
-      <script src="js/jquery-migrate-3.0.1.min.js"></script>
-      <script src="js/popper.min.js"></script>
-      <script src="js/bootstrap.min.js"></script>
-      <script src="js/jquery.easing.1.3.js"></script>
-      <script src="js/jquery.waypoints.min.js"></script>
-      <script src="js/jquery.stellar.min.js"></script>
-      <script src="js/owl.carousel.min.js"></script>
-      <script src="js/jquery.magnific-popup.min.js"></script>
-      <script src="js/aos.js"></script>
-      <script src="js/jquery.animateNumber.min.js"></script>
-      <script src="js/scrollax.min.js"></script>
-      <script src="js/contact-form.js"></script>
+    <!-- Projects Section -->
+    <section id="projects" class="projects">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">What I've Built</span>
+                <h2 class="section-title">Featured Projects</h2>
+            </div>
+            
+            <div class="projects-grid">
+                <!-- Project 1 -->
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="images/bg_1.jpg" alt="Health Report Analyzer">
+                        <div class="project-overlay">
+                            <a href="https://github.com/Rajput-xv/Health-Report-Analyzer" target="_blank" class="project-link">
+                                <i class="fab fa-github"></i>
+                            </a>
+                            <a href="https://health-report-analyzer.vercel.app/" target="_blank" class="project-link">
+                                <i class="fas fa-external-link-alt"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3>Health Report Analyzer</h3>
+                        <p>Medical report analysis tool that extracts data from lab reports and presents it in organized tables with trend analysis.</p>
+                        <div class="project-tech">
+                            <span>React</span>
+                            <span>Node.js</span>
+                            <span>OCR</span>
+                            <span>JWT</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Project 2 -->
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="images/bg_1.jpg" alt="Crisis Nexus">
+                        <div class="project-overlay">
+                            <a href="https://github.com/Rajput-xv/Crisis-nexus-frontend" target="_blank" class="project-link">
+                                <i class="fab fa-github"></i>
+                            </a>
+                            <a href="https://crisis-nexus.vercel.app/" target="_blank" class="project-link">
+                                <i class="fas fa-external-link-alt"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3>Crisis Nexus</h3>
+                        <p>Comprehensive disaster management platform designed to enhance community resilience and coordinate relief efforts.</p>
+                        <div class="project-tech">
+                            <span>React</span>
+                            <span>Node.js</span>
+                            <span>MongoDB</span>
+                            <span>Maps API</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Project 3 -->
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="images/bg_1.jpg" alt="Indian Bazaar">
+                        <div class="project-overlay">
+                            <a href="https://github.com/Rajput-xv/indian-bazaar" target="_blank" class="project-link">
+                                <i class="fab fa-github"></i>
+                            </a>
+                            <a href="https://indian-bazaar.vercel.app/" target="_blank" class="project-link">
+                                <i class="fas fa-external-link-alt"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3>Indian Bazaar</h3>
+                        <p>Full-stack marketplace connecting street food vendors with raw material suppliers in India.</p>
+                        <div class="project-tech">
+                            <span>React</span>
+                            <span>Express</span>
+                            <span>MongoDB</span>
+                            <span>JWT</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Project 4 -->
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="images/bg_1.jpg" alt="Auction System">
+                        <div class="project-overlay">
+                            <a href="https://github.com/Rajput-xv/Auction" target="_blank" class="project-link">
+                                <i class="fab fa-github"></i>
+                            </a>
+                            <a href="https://auction-lac.vercel.app" target="_blank" class="project-link">
+                                <i class="fas fa-external-link-alt"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3>Auction System</h3>
+                        <p>Full-stack auction application where users can create, bid on, and manage auction items in real-time.</p>
+                        <div class="project-tech">
+                            <span>React</span>
+                            <span>Node.js</span>
+                            <span>MongoDB</span>
+                            <span>Real-time</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Project 5 -->
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="images/bg_1.jpg" alt="SynapseQ">
+                        <div class="project-overlay">
+                            <a href="https://github.com/Aksh202004/ODOO-hackthon" target="_blank" class="project-link">
+                                <i class="fab fa-github"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3>SynapseQ - Q&A Platform</h3>
+                        <p>Comprehensive question-and-answer platform built during ODOO Hackathon for community knowledge building.</p>
+                        <div class="project-tech">
+                            <span>React</span>
+                            <span>Express</span>
+                            <span>MongoDB</span>
+                            <span>JWT</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Project 6 -->
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="images/bg_1.jpg" alt="Auto-Fill Assistant">
+                        <div class="project-overlay">
+                            <a href="https://github.com/Rajput-xv/Auto-Fill" target="_blank" class="project-link">
+                                <i class="fab fa-github"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3>Auto-Fill Assistant</h3>
+                        <p>Chrome extension that automatically saves and fills form data across any website with smart field matching.</p>
+                        <div class="project-tech">
+                            <span>JavaScript</span>
+                            <span>Chrome API</span>
+                            <span>Local Storage</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="view-more">
+                <a href="https://github.com/Rajput-xv" target="_blank" class="btn btn-outline">
+                    View More Projects <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
+        </div>
+    </section>
 
-      <script src="js/main.js"></script>
-      <script>
-        function gitClick() {
-          window.location.href = 'https://www.github.com/Rajput-xv';
-        }
-        
-        // Experience section toggle functionality
-        document.addEventListener('DOMContentLoaded', function() {
-          // Fix the HTML structure first by wrapping the existing content
-          const experienceSection = document.querySelector('#resume-section');
-          
-          if (experienceSection) {
-            // Clean up the HTML structure by removing extra closing tags and elements
-            const extraClosingTags = experienceSection.querySelectorAll('.row > .col-md-6 + ul, .row > .col-md-6 + p');
-            extraClosingTags.forEach(tag => {
-              tag.parentNode.removeChild(tag);
-            });
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Get In Touch</span>
+                <h2 class="section-title">Contact Me</h2>
+            </div>
             
-            // Select all resume wraps in the experience section
-            const resumeWraps = experienceSection.querySelectorAll('.resume-wrap');
-            
-            resumeWraps.forEach(wrap => {
-              // Find all paragraphs with the mt-4 class that contain the content
-              const content = wrap.querySelector('p.mt-4');
-              
-              if (content) {
-                // Check if it's already wrapped in an experience-content div
-                const parentDiv = content.parentNode;
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="contact-text">
+                        <h3>Let's Work Together</h3>
+                        <p>
+                            I'm always interested in hearing about new projects and opportunities. 
+                            Whether you have a question or just want to say hi, feel free to reach out!
+                        </p>
+                    </div>
+                    
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div>
+                                <h4>Location</h4>
+                                <p>Meerut, Uttar Pradesh, India</p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div>
+                                <h4>Email</h4>
+                                <a href="mailto:yash44365@gmail.com">yash44365@gmail.com</a>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-phone"></i>
+                            </div>
+                            <div>
+                                <h4>Phone</h4>
+                                <a href="tel:+919759277024">+91 975-927-7024</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-social">
+                        <a href="https://github.com/Rajput-xv" target="_blank" class="social-link">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="https://www.linkedin.com/in/yash-rajput-xv" target="_blank" class="social-link">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                        <a href="https://x.com/rajput_xv" target="_blank" class="social-link">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="https://www.instagram.com/rajput_xv" target="_blank" class="social-link">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                    </div>
+                </div>
                 
-                if (!parentDiv.classList.contains('experience-content')) {
-                  // Create a new div to wrap the content
-                  const experienceContent = document.createElement('div');
-                  experienceContent.className = 'experience-content';
-                  
-                  // Move the content to the new div
-                  experienceContent.appendChild(content.cloneNode(true));
-                  
-                  // Replace the original content with the wrapped version
-                  content.parentNode.replaceChild(experienceContent, content);
-                }
-              }
-              
-              // Add click event to toggle visibility
-              wrap.addEventListener('click', function(e) {
-                // Don't toggle if clicking on a link
-                if (e.target.tagName.toLowerCase() === 'a') {
-                  return;
-                }
-                
-                // Toggle the expanded class
-                this.classList.toggle('expanded');
-                
-                // Ensure all other cards are closed when opening a new one
-                if (this.classList.contains('expanded')) {
-                  resumeWraps.forEach(otherWrap => {
-                    if (otherWrap !== this && otherWrap.classList.contains('expanded')) {
-                      otherWrap.classList.remove('expanded');
-                    }
-                  });
-                }
-              });
-            });
-            
-            // All cards start collapsed by default
-          }
-          
-          // Projects section toggle functionality
-          const projectsSection = document.querySelector('#projects-section');
-          
-          if (projectsSection) {
-            // Select all resume wraps in the projects section
-            const projectWraps = projectsSection.querySelectorAll('.resume-wrap');
-            
-            projectWraps.forEach(wrap => {
-              // Add click event to toggle visibility
-              wrap.addEventListener('click', function(e) {
-                // Don't toggle if clicking on a link
-                if (e.target.tagName.toLowerCase() === 'a' || 
-                    e.target.closest('.project-links') !== null) {
-                  return;
-                }
-                
-                // Toggle the expanded class
-                this.classList.toggle('expanded');
-                
-                // Ensure all other cards are closed when opening a new one
-                if (this.classList.contains('expanded')) {
-                  projectWraps.forEach(otherWrap => {
-                    if (otherWrap !== this && otherWrap.classList.contains('expanded')) {
-                      otherWrap.classList.remove('expanded');
-                    }
-                  });
-                }
-              });
-            });
-            
-            // All project cards start collapsed by default
-          }
-        });
-      </script>
+                <div class="contact-form-wrapper">
+                    <form action="https://api.web3forms.com/submit" method="POST" class="contact-form">
+                        <input type="hidden" name="access_key" value="1062bbfa-af4d-48d3-985b-56511cfb073d">
+                        <input type="hidden" name="subject" value="New Contact Form Submission from Portfolio">
+                        <input type="checkbox" name="botcheck" class="hidden">
+                        
+                        <div class="form-group">
+                            <label for="name">Full Name *</label>
+                            <input type="text" id="name" name="fullname" required>
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="email">Email *</label>
+                                <input type="email" id="email" name="email" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="phone">Phone</label>
+                                <input type="tel" id="phone" name="phone">
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="subject">Subject *</label>
+                            <input type="text" id="subject" name="subject" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="message">Message *</label>
+                            <textarea id="message" name="message" rows="5" required></textarea>
+                        </div>
+                        
+                        <button type="submit" class="btn btn-primary btn-block">
+                            Send Message <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
 
-    </body>
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <p>&copy; <span id="year"></span> Yash Verma. All rights reserved.</p>
+                <p>Built with <i class="fas fa-heart"></i> and lots of <i class="fas fa-coffee"></i></p>
+            </div>
+        </div>
+    </footer>
 
-  </html>
+    <!-- Back to Top Button -->
+    <button id="backToTop" class="back-to-top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script src="script.js"></script>
+</body>
+</html>

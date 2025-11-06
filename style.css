@@ -388,6 +388,7 @@ section {
 
 .about-image {
     position: relative;
+    width: 85%;
 }
 
 .about-image img {

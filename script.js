@@ -459,7 +459,9 @@ function getPreviousSection(currentSection) {
                 const viewport = `${cardWidth * 2}x${cardHeight * 2}`; // 2x for retina
 
                 // Request screenshot (website preview) instead of meta image/logo
-                const shotUrl = `https://api.microlink.io?url=${encodeURIComponent(href)}&screenshot=true&meta=false&fullPage=false&viewport=${viewport}`;
+                // Add waitUntil=networkidle0 to wait for full page load (React/JS apps need time to hydrate)
+                // Add waitFor=3000 (3 seconds) as additional delay for dynamic content
+                const shotUrl = `https://api.microlink.io?url=${encodeURIComponent(href)}&screenshot=true&meta=false&fullPage=false&viewport=${viewport}&waitUntil=networkidle0&waitFor=3000`;
                 let resp = await fetch(shotUrl);
                 if (resp.ok) {
                     const json = await resp.json();
